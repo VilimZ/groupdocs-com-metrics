@@ -1,0 +1,32 @@
+<div class='container-fluid {{ .Get "className"}} ' id='{{ .Get "sectionid" }}'>
+    <div class="container">
+      <div class="row d-center">
+        {{ if isset .Params "boxheading" }}
+        <div class="col-lg-12">
+          <h2>{{ .Get "boxheading" }}</h2>
+          <p>{{ .Get "boxtext" }}</p>
+          {{ end }}
+        </div>
+         <div class="col-lg-4 pr-lg-0">
+          <div class="offerbox bg-drk-primary">
+            <a href='{{ .Get "totallink" }}'><h5>{{ .Get "totaltitle" }}</h5>
+            <h3>{{ .Get "totalproduct" }}</h3></a>
+            <p>{{ .Get "totaldescription" }}</p>
+            <a href='{{ .Get "totallink" }}'>{{ .Get "readtext" }}</a>
+          </div></div>
+          <div class="col-lg-4  pr-lg-0">
+            <div class="offerbox bg-gr-primary">
+              <a href='{{ .Get "totalnetlink" }}'>
+              <h5>{{ .Get "totaltitle" }}</h5>
+              <h3>{{ .Get "totalnetproduct" }}</h3></a>
+              <p>{{ .Get "totalnetdescription" }}</p>
+              <a href='{{ .Get "totalnetlink" }}'>{{ .Get "readtext" }}</a>
+            </div></div>
+         <div class="col-lg-4">
+          <div class="offerbox bg-bl-primary">
+            <a href='{{ .Get "totaljavalink" }}'>
+                <h5>{{ .Get "totaltitle" }}</h5>
+                <h3>{{ .Get "totaljavaproduct" }}</h3></a>
+                <p>{{ .Get "totaljavadescription" }}</p>
+                <a href='{{ .Get "totaljavalink" }}'>{{ .Get "readtext" }}</a>
+          </div></div></div></div></div>

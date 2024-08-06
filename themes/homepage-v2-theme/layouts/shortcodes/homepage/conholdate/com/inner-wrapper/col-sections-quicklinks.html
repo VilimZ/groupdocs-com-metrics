@@ -1,0 +1,15 @@
+<div class="col-lg-4 order-2">
+    <div class="sidebox p-4">
+    <h4 class="f20 font-midbold text-dark">{{ .Get "ql-heading"}}</h4>
+    <hr>
+    <ul class="unshow-list">
+        {{ if isset .Params "ql-1" }}<li><a href='{{ .Get "ql-1"}}'>{{ .Get "ql-1text"}}</a></li>{{ end }}
+        {{ if isset .Params "ql-2" }}<li><a href='{{ .Get "ql-2"}}'>{{ .Get "ql-2text"}}</a></li>{{ end }}
+        {{ if isset .Params "ql-3" }}<li><a href='{{ .Get "ql-3"}}'>{{ .Get "ql-3text"}}</a></li>{{ end }}
+        {{ if isset .Params "ql-3-2" }}<li><a href='{{ .Get "ql-3-2"}}'>{{ .Get "ql-3-2-text"}}</a></li>{{ end }}
+        {{ if isset .Params "ql-4" }}<li><a href='{{ .Get "ql-4"}}'>{{ .Get "ql-4text"}}</a></li>{{ end }}
+        {{ if isset .Params "ql-5" }}<li><a href='{{ .Get "ql-5"}}'>{{ .Get "ql-5text"}}</a></li>{{ end }}
+        {{ if isset .Params "ql-6" }}<li><a href='{{ .Get "ql-6"}}'>{{ .Get "ql-6text"}}</a></li>{{ end }}
+        {{ if isset .Params "ql-7" }}<li><a href='{{ .Get "ql-7"}}'>{{ .Get "ql-7text"}}</a></li>{{ end }}
+    </ul></div>
+</div> 

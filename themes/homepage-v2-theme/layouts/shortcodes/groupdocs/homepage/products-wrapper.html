@@ -1,0 +1,10 @@
+<div class="container-fluid rowblocks sy-6">
+    <div class="container">
+        <div class="row">
+    <div class="col-lg-12 heading-bar">
+        <h3>{{ .Get "heading-title"}}</h3>
+    <p>{{ .Get "heading-text"}}</p>
+</div>
+{{ .Inner }}
+<div class="col-lg-12 mt-5 p-0"><a href='{{ .Get "releaselink"}}' class="btn btn-cta-red">{{ .Get "releasetext"}}</a></div>
+</div></div></div>

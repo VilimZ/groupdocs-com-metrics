@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#3892C9;stroke-width:30;stroke-miterlimit:10;}
+	.st1{display:none;}
+	.st2{display:inline;fill:#3892C9;}
+	.st3{display:inline;}
+	.st4{fill:#3193CB;}
+	.st5{fill:#3F94CB;}
+	.st6{fill:#3892C9;}
+	.st7{fill:none;stroke:#3892C9;stroke-width:40;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<g id="_x33_">
+	<g id="_x32_">
+		<g>
+			<rect x="402.33" y="39.19" class="st0" width="92.08" height="450.18"/>
+			<g class="st1">
+				<rect x="19.66" y="219.01" class="st2" width="171.09" height="52.88"/>
+				<rect x="19.66" y="338.25" class="st2" width="171.09" height="52.88"/>
+				<rect x="19.66" y="457.5" class="st2" width="171.09" height="52.88"/>
+			</g>
+			<g class="st1">
+				<g class="st3">
+					<path class="st4" d="M133.26,178.01c-2.24-16.45-1.81-32.51,1.29-47.73l31.32,6.39c-2.38,11.69-2.7,24.14-0.94,37.02
+						L133.26,178.01z M144.11,101.45c6.95-14.73,16.63-27.85,28.76-39.02l21.64,23.53c-9.09,8.36-16.32,18.16-21.5,29.13
+						L144.11,101.45z M197.32,44.67c14.01-7.92,29.23-13.29,45.25-15.94l5.23,31.53c-12.31,2.04-24,6.16-34.74,12.23L197.32,44.67z
+						 M270.86,58.98l1.73-31.92c16.18,0.88,31.91,4.58,46.75,11.01l-12.7,29.33C295.28,62.48,283.24,59.65,270.86,58.98z
+						 M326.73,78.85l18.71-25.92c12.54,9.05,23.81,20.3,33.53,33.46l-25.72,18.98C345.5,94.88,336.58,85.96,326.73,78.85z"/>
+				</g>
+				<g class="st3">
+					<rect x="367.49" y="53.22" class="st5" width="26.09" height="66.86"/>
+					<rect x="326.72" y="95.24" class="st5" width="66.86" height="26.09"/>
+				</g>
+			</g>
+		</g>
+	</g>
+	
+		<rect x="3.69" y="424.44" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 351.333 929.2161)" class="st6" width="343.95" height="80.34"/>
+	
+		<rect x="3.69" y="289.3" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 351.333 658.9424)" class="st6" width="343.95" height="80.34"/>
+	<g>
+		<path class="st7" d="M277.54,67.26C154.52,54.43,96.92,126.43,102.19,234.81"/>
+		<g>
+			<path class="st5" d="M269.54,37.08l39.04,42.03c6.9,7.43,18.52,7.86,25.95,0.96l0,0c7.43-6.9,7.86-18.52,0.96-25.95l-39.04-42.03
+				c-6.9-7.43-18.52-7.86-25.95-0.96l0,0C263.06,18.04,262.64,29.65,269.54,37.08z"/>
+			<path class="st5" d="M293.71,120.42l42.03-39.04c7.43-6.9,7.86-18.52,0.96-25.95l0,0c-6.9-7.43-18.52-7.86-25.95-0.96
+				l-42.03,39.04c-7.43,6.9-7.86,18.52-0.96,25.95l0,0C274.67,126.89,286.28,127.32,293.71,120.42z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>

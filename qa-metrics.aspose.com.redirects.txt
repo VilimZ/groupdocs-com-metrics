@@ -1,0 +1,2 @@
+# Individual Redirects for 404 links from GA
+rewrite /downloads/test https://qa-metrics.aspose.com/ permanent;

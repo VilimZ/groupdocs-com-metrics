@@ -1,0 +1,191 @@
+{{ define "main" }}
+{{ .Content }}
+
+{{ $totalDownloadsJsonData := .Scratch.Get "totalDownloadsJsonData" }}
+{{ $productsDownloadsJsonData := .Scratch.Get "productsDownloadsJsonData" }}
+
+
+
+{{ $totalDownloads := .Scratch.Get "totalDownloads"}}
+
+
+<!-- page header template start -->
+{{ .Scratch.Set "bcHome" "Home" }} 
+{{ .Scratch.Set "bcHomeLink" "/" }}
+{{ .Scratch.Set "bcLink2" "Metrics" }} 
+{{ .Scratch.Set "bcLink2Url" "/metrics/" }}
+{{ .Scratch.Set "bcLink3" "" }} 
+{{ .Scratch.Set "bcLink3Url" "" }}
+{{ .Scratch.Set "bcLink4" "" }} 
+{{ .Scratch.Set "bcLink4Url" "" }}
+{{ .Scratch.Set "bcPage" "Downloads" }}
+{{ .Scratch.Set "innerHeaderTitleTop" "Aspose APIs were Downloaded" }} 
+{{ .Scratch.Set "innerHeaderTitle" $totalDownloads }} 
+{{ .Scratch.Set "innerHeaderText" "Times by the Developers Around the World!" }} 
+
+
+{{ partial "metrics/inner-header-wrapper.html" . }}
+
+<!-- page header template end -->
+
+
+{{ $lastUrlElement := .Scratch.Get "lastUrlElement" }}
+
+{{ if eq $lastUrlElement "downloads" }}
+
+{{ .Scratch.Set "secHeading" "Explore Downloads by Category"}}
+{{ .Scratch.Set "secDescription" ""}}
+{{ .Scratch.Set "secSubHeading" ""}}
+
+{{ partial "metrics/blocks-start.html" . }}
+
+<div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+    <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+        <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">Downloads By</p>
+        <h3>Package Managers</h3>
+        <p style="min-height:26px;">View downloads metrics by package managers.</p>
+        <div class="btn-box" style="display: block;"><a
+                href='package-managers'><span style="color:#0052b3;">Downloads by Package Manager</span></a></div>
+        </div>
+</div>
+
+<div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+    <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+        <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">Downloads By</p>
+        <h3>Platforms</h3>
+        <p style="min-height:26px;">View downloads metrics by development platforms.</p>
+        <div class="btn-box" style="display: block;"><a
+                href='platforms'><span style="color:#0052b3;">Downloads by Platform</span></a></div>
+        </div>
+</div>
+
+<div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+    <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+        <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">Downloads By</p>
+        <h3>Product Family</h3>
+        <p style="min-height:26px;">View downloads metrics by product families.</p>
+        <div class="btn-box" style="display: block;"><a
+                href='product-families'><span style="color:#0052b3;">Downloads by Family</span></a></div>
+        </div>
+</div>
+
+{{ partial "metrics/blocks-end.html" . }}
+
+{{ end }}
+
+<!-- {{ $jsonData := getJSON
+    "https://script.google.com/macros/s/AKfycbzc2o1e35eczeGvip9TESeI4aiPTlIWtzjNe9HOPwPHgOYly2wZ-8Ei54Y7hHIIHmnD5Q/exec" }}
+     -->
+    
+
+
+{{ if strings.HasSuffix .Page.Permalink "/downloads/package-managers/" }}
+
+<!-- variables/parameters for the partial block -->
+
+
+
+{{ .Scratch.Set "subheading" "Downloads by Package Manager"}}
+
+{{ partial "metrics/blocks-start.html" . }}
+
+{{ range $jsonData.data }}
+{{ if eq .Category "Package Manager"}}
+<div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+    <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+        <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Type }} Downloads</p>
+        <h3>{{ lang.FormatNumberCustom 0 .Total }}</h3>
+        <p style="min-height:26px;">Total downloads from {{ .Type }}.
+        </p>
+        <div class="btn-box" style="display: block;"><a href='?pm={{ strings.ToLower .Type }}'><span style="color:#0052b3;">View {{ .Type }}
+                    Downloads Details</span></a></div>
+    </div>
+</div>
+{{ end }}
+
+{{ end }}
+
+{{ partial "metrics/blocks-end.html" . }}
+
+{{ end }}
+
+{{ if strings.HasSuffix .Page.Permalink "/downloads/platform/" }}
+
+{{ .Scratch.Set "subheading" "Downloads by Platforms"}}
+
+{{ partial "metrics/blocks-start.html" . }}
+
+{{ range $jsonData.data }}
+{{ if eq .Category "Platform"}}
+<div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+    <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+        <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Type }} Downloads</p>
+        <h3>{{ lang.FormatNumberCustom 0 .Total }}</h3>
+        <p style="min-height:26px;">Total downloads from {{ .Type }}.
+        </p>
+        <div class="btn-box" style="display: block;"><a href='sublink1'><span style="color:#0052b3;">View {{ .Type }}
+                    Downloads Details</span></a></div>
+    </div>
+</div>
+{{ end }}
+
+{{ end }}
+
+{{ partial "metrics/blocks-end.html" . }}
+
+{{ end }}
+
+
+{{ if strings.HasSuffix .Page.Permalink "/downloads/package-manager/nuget/" }}
+
+{{ .Scratch.Set "subheading" "Downloads by Nuget Package Manager"}}
+
+{{ partial "metrics/blocks-start.html" . }}
+
+{{ range $jsonData.data }}
+{{ if eq .Category "Platform"}}
+<div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+    <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+        <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Type }} Downloads</p>
+        <h3>{{ lang.FormatNumberCustom 0 .Total }}</h3>
+        <p style="min-height:26px;">Total downloads from {{ .Type }}.
+        </p>
+        <div class="btn-box" style="display: block;"><a href='sublink1'><span style="color:#0052b3;">View {{ .Type }}
+                    Downloads Details</span></a></div>
+    </div>
+</div>
+{{ end }}
+
+{{ end }}
+
+{{ partial "metrics/blocks-end.html" . }}
+
+{{ end }}
+
+
+
+
+
+<!-- following code is just for testing-->
+{{ $total := index (index $jsonData.data 0) "Total" }}
+{{/* $total */}}
+{{/* lang.FormatNumberCustom 0 $total */}}
+
+{{/* lang.FormatNumberCustom 0 (index (index $jsonData.data 1) "Total") */}}
+
+
+{{/* range $totalDownloadsJsonData.data */}}
+<!-- {{/* .Category */}} -- {{/* .Type */}} -- {{/* lang.FormatNumberCustom 0 .Total */}} <br> -->
+
+{{/* end */}}
+<!-- above code is just for testing-->
+{{/* .Scratch.Get "lastUrlElement" */}}
+
+{{ end }} 
+

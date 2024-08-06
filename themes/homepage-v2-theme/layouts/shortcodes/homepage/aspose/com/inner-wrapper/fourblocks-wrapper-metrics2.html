@@ -1,0 +1,68 @@
+
+<div class='container-fluid fourblocks sy-6 {{ .Get "heighclass" }}' style="padding-bottom:0px!important;">
+    <div class="container">
+        <h4 style="font-size: 34px;margin-left: 30px;">{{ .Get "secheading" }}</h4>
+        <p style="font-size: 18px;margin-left: 30px;">{{ .Get "secdescription" }}</p>
+        <h3 style="font-size:20px;margin-left:30px;margin-top:50px;margin-bottom: 30px;">{{ .Get "secsubheading" }}</h3>
+    <div class="row d-start" style="border-top: 1px solid #dadce0;border-bottom: 1px solid #dadce0;">
+    <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+    <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+    <!--<i class='las la-{{ .Get "icoClass1" }}'></i>-->
+    <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Get "stitle1"}}</p>
+    <h3>{{ .Get "fbheading1" }}</h3>
+    <p style="min-height:26px;">{{ .Get "fbtext1"}}</p>
+    {{ if isset .Params "fblinktext1" }}<a href='{{ .Get "fblink1" }}'>{{ .Get "fblinktext1"}}</a>{{ end }}
+    {{ if isset .Params "sublinktext1" }}<div class="btn-box" style="display: block;"><a href='{{ .Get "sublink1"}} '><span style="color:#0052b3;">{{ .Get "sublinktext1"}}</span></a></div>{{end}}
+    <!--{{ if isset .Params "sublinktext1" }}<a href='{{ .Get "sublink1"}} ' class="btn btn-cta-red" style="font-size:14px!important;padding:10px 20px;">{{ .Get "sublinktext1"}}</a>{{end}}-->
+    </div></div>
+    <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+        <div class="blockcards bgcard2" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+            <!--<i class='las la-{{ .Get "icoClass2" }}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Get "stitle2"}}</p>
+        <h3>{{ .Get "fbheading2" }}</h3>
+        <p style="min-height:26px;">{{ .Get "fbtext2"}}</p>
+    {{ if isset .Params "fblinktext2" }}<a href='{{ .Get "fblink2" }}'>{{ .Get "fblinktext2"}}</a>{{ end }}
+    {{ if isset .Params "sublinktext2" }}<div class="btn-box"><a href='{{ .Get "sublink2"}} '><span style="color:#0052b3">{{ .Get "sublinktext2"}}</span></a></div>{{end}}
+    <!--{{ if isset .Params "sublinktext2" }}<a href='{{ .Get "sublink2"}} ' class="btn btn-cta-red" style="font-size:14px!important;padding:10px 20px;">{{ .Get "sublinktext2"}}</a>{{end}}-->
+        </div></div>
+        <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+            <div class="blockcards bgcard3" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+                <!--<i class='las la-{{ .Get "icoClass3" }}'></i>-->
+            <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Get "stitle3"}}</p>
+            <h3>{{ .Get "fbheading3" }}</h3>
+            <p style="min-height:26px;">{{ .Get "fbtext3"}}</p>
+    {{ if isset .Params "fblinktext3" }}<a href='{{ .Get "fblink3" }}'>{{ .Get "fblinktext3"}}</a>{{ end }}
+    {{ if isset .Params "sublinktext3" }}<div class="btn-box"><a href='{{ .Get "sublink3"}} '><span style="color:#0052b3">{{ .Get "sublinktext3"}}</span></a></div>{{end}}
+    <!--{{ if isset .Params "sublinktext3" }}<a href='{{ .Get "sublink"}} ' class="btn btn-cta-red" style="font-size:14px!important;padding:10px 20px;color: #fff;">{{ .Get "sublinktext3"}}</a>{{end}}-->
+            </div></div>
+    <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+        <div class="blockcards bgcard4" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+            <!--<i class='las la-{{ .Get "icoClass4" }}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Get "stitle4"}}</p>
+        <h3>{{ .Get "fbheading4" }}</h3>
+        <p style="min-height:26px;">{{ .Get "fbtext4"}}</p>
+    {{ if isset .Params "fblinktext3" }}<a href='{{ .Get "fblink4" }}'>{{ .Get "fblinktext4"}}</a>{{ end }}
+    {{ if isset .Params "sublinktext4" }}<div class="btn-box"><a href='{{ .Get "sublink4"}} '><span style="color:#0052b3">{{ .Get "sublinktext4"}}</span></a></div>{{end}}
+    <!--{{ if isset .Params "sublinktext4" }}<a href='{{ .Get "sublink"}} ' class="btn btn-cta-red" style="font-size:14px!important;padding:10px 20px;">{{ .Get "sublinktext4"}}</a>{{end}}-->
+        </div></div>
+        <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+            <div class="blockcards bgcard4" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+                <!--<i class='las la-{{ .Get "icoClass4" }}'></i>-->
+            <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Get "stitle5"}}</p>
+            <h3>{{ .Get "fbheading5" }}</h3>
+            <p style="min-height:26px;">{{ .Get "fbtext5"}}</p>
+        {{ if isset .Params "fblinktext5" }}<a href='{{ .Get "fblink5" }}'>{{ .Get "fblinktext5"}}</a>{{ end }}
+        {{ if isset .Params "sublinktext5" }}<div class="btn-box"><a href='{{ .Get "sublink5"}} '><span style="color:#0052b3">{{ .Get "sublinktext5"}}</span></a></div>{{end}}
+        <!--{{ if isset .Params "sublinktext4" }}<a href='{{ .Get "sublink"}} ' class="btn btn-cta-red" style="font-size:14px!important;padding:10px 20px;">{{ .Get "sublinktext4"}}</a>{{end}}-->
+            </div></div>
+        {{ if isset .Params "fbheading6" }}
+        <div class="col-lg-6">
+            <div class="blockcards bgcard2">
+                <!--<i class='las la-{{ .Get "icoClass5" }}'></i>-->
+            <h3>{{ .Get "fbheading6" }}</h3>
+            <p style="min-height:100px;">{{ .Get "fbtext6"}}</p>
+        <a href='{{ .Get "fblink5" }}'>{{ .Get "fblinktext6"}}</a>
+            </div></div>{{ end }}
+        </div></div></div>
+        <style>.d-start .col-lg-6:last-child{border-bottom:none!important;}</style>
+ 

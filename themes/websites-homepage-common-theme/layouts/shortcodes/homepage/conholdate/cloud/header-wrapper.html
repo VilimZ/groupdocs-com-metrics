@@ -1,0 +1,20 @@
+<!-- <section _ngcontent-serverapp-c1="" class="section section_utp">
+    <div _ngcontent-serverapp-c1="" class="custom_container">
+        <div _ngcontent-serverapp-c1="" class="section_inner section_main__inner">
+            <div _ngcontent-serverapp-c1="" class="section_utp__content">
+                {{.Inner}}
+            </div>
+        </div>
+    </div>
+</section> -->
+
+{{ $headerclass := .Get "headerclass" }}
+<div class="container-fluidd static_headere {{ $headerclass }} ">
+<div class="containerr headertitlee custom_container">
+      <div class="roww section_innerr section_main__inner">
+        <div class="col-md-66 headertextt section_utp__content">
+            {{ .Inner }}
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class='container-fluid innerheader sb-6'>
+    <div class="container">
+        <ul class="innerbreadcrumb">
+            {{ if not (eq (.Page.Scratch.Get "bcHome") "") }}<li><a href='{{ .Page.Scratch.Get "bcHomeLink" }}'>{{ .Page.Scratch.Get "bcHome" }}</a></li> {{end }}
+            {{ if not (eq (.Page.Scratch.Get "bcLink2") "") }}<li><a href='{{ .Page.Scratch.Get "bcLink2Url" }}'>{{ .Page.Scratch.Get "bcLink2" }}</a></li>{{ end }}
+            {{ if not (eq (.Page.Scratch.Get "bcLink3") "") }}<li><a href='{{ .Page.Scratch.Get "bcLink3Url" }}'>{{ .Page.Scratch.Get "bcLink3" }}</a></li>{{ end }}
+            {{ if not (eq (.Page.Scratch.Get "bcLink4") "") }}<li><a href='{{ .Page.Scratch.Get "bcLink4Url" }}'>{{ .Page.Scratch.Get "bcLink4" }}</a></li>{{ end }}
+            {{ if not (eq (.Page.Scratch.Get "bcPage") "") }}<li>{{ .Page.Scratch.Get "bcPage" }}</li>{{ end  }}
+        </ul>
+
+        <h2 style="display: block;text-align: center;">{{ .Page.Scratch.Get "innerHeaderTitleTop" }}</h2>
+        <h1 id="totalmetrics2" style="font-size:120px;margin-top:40px;display:block;text-align: center;"
+            class="count metrics-number4">{{ .Page.Scratch.Get "innerHeaderTitle" }}</h1>
+        <h2 style="display: block;text-align: center;">{{ .Page.Scratch.Get "innerHeaderText" }}</h2>
+        <!--{{ if isset .Params "ctabtn" }}<a href='{{ .Get "ctalink" }}' class="btn btn-cta-yellow mt-5">{{ .Get "ctabtn"}}</a>{{ end }}{{ if isset .Params "ctabtn2" }}<a href='{{ .Get "ctalink2" }}' class="btn btn-link-header mt-lg-5">{{ .Get "ctabtn2" }} <i class="las la-arrow-right"></i></a> {{ end }}-->
+    </div>
+</div>

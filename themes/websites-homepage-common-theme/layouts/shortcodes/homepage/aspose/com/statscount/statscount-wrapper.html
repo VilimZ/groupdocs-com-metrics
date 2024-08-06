@@ -1,0 +1,10 @@
+{{ $divclass := .Get "divclass" }}
+<div class="container-fluid statscount {{ $divclass }}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {{.Inner}}
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,4 @@
+<ul class="nav nav-tabs col-lg-3" id="protabs" role="tablist">
+    {{ .Inner }}
+    {{ if isset .Params "jumptoanchor" }}<a href="#products" class='btn-cta-yellow text-dark {{ .Get "jumptoanchor"}}'>{{ .Get "jumptoanchortext"}}<em class="las la-arrow-down"></em></a>{{ end }}
+</ul>

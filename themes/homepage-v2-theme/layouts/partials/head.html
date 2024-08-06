@@ -1,0 +1,429 @@
+<!-- metrics -->
+{{ partial "metrics/general/top.html" . }}
+<!-- metrics -->
+
+<head>
+    {{ $CurrentSection :=.Site.Params.contentsection }}
+    {{ $faviconfolder :=.Site.Params.faviconfolder }}
+    {{$currentcontentpath := print $faviconfolder "/" $CurrentSection}}
+
+
+    {{ if (or (in .Site.BaseURL "qa-metrics") (in .Site.BaseURL "localhost") )  }}
+    <meta name="robots" content="noindex, nofollow"/>
+    {{ else }}
+    <meta name="robots" content="index, follow"/>
+    {{ end }}
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="exists" content="yes" />
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="theme-color" content="#ffffff">
+    {{ $generator :=.Site.Params.generator }}
+    {{ if $generator }}
+    <meta name="generator" content="{{ $generator }}" />
+    {{ end }}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="{{ .Permalink | absURL }}" />
+
+
+
+    <!--<title>{{ .Title }}</title>-->
+    <!-- page titles and descriptions -->
+    {{ partial "metrics/general/titles.html" . }}
+
+
+    {{ with .Keywords }}
+    <meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}">{{ end }}
+    <!--<meta name="description" content="{{ .Page.Params.description }}" />-->
+
+    {{$filepath := print "/images/" $faviconfolder "/favicon"}}
+    {{$staticfilepath := print "static/images/" $faviconfolder "/favicon"}}
+
+    {{$applefavicon := print $filepath "/" "apple-touch-icon.png"}}
+    {{$applefaviconpath := print $staticfilepath "/" "apple-touch-icon.png"}}
+
+    {{$favicon32 := print $filepath "/" "favicon-32x32.png"}}
+    {{$favicon32path := print $staticfilepath "/" "favicon-32x32.png"}}
+
+    {{$favicon16 := print $filepath "/" "favicon-16x16.png"}}
+    {{$favicon16path := print $staticfilepath "/" "favicon-16x16.png"}}
+
+    {{$safari := print $filepath "/" "safari-pinned-tab.svg"}}
+    {{$safaripath := print $staticfilepath "/" "safari-pinned-tab.svg"}}
+
+    {{$favicon := print $filepath "/" "favicon.ico"}}
+    {{$faviconpath := print $staticfilepath "/" "favicon.ico"}}
+
+    {{$browserconfig := print $filepath "/" "browserconfig.xml"}}
+    {{$browserconfigpath := print $staticfilepath "/" "browserconfig.xml"}}
+
+    {{ if (fileExists $faviconpath) -}}
+    <link href="{{ $favicon }}" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    {{- end }}
+    {{ if (fileExists $applefaviconpath) -}}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $applefavicon }}">
+    {{- end }}
+
+    {{ if (fileExists $favicon32path) -}}
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32 }}">
+    {{- end }}
+
+    {{ if (fileExists $favicon16path) -}}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16 }}">
+    {{- end }}
+
+    {{ if (fileExists $safaripath) -}}
+    <link rel="mask-icon" href="{{ $safari }}" color="#FFFFFF">
+    {{- end }}
+
+
+    {{ if (fileExists $browserconfigpath ) -}}
+    <meta name="msapplication-config" content="{{ $browserconfig }}">
+    {{- end }}
+
+    {{ $contentauthor :=.Site.Params.contentauthor }}
+    {{ if $contentauthor }}
+    <meta name="author" content="{{ $contentauthor }}" />
+    {{ end }}
+
+    {{ $googlesiteverification :=.Site.Params.googlesiteverification }}
+    {{ if $googlesiteverification }}
+    <meta name="google-site-verification" content="{{ $googlesiteverification }}" />
+    {{ end }}
+
+    {{ $yandexverification :=.Site.Params.yandexverification }}
+    {{ if $yandexverification }}
+    <meta name="yandex-verification" content="{{ $yandexverification }}" />
+    {{ end }}
+
+    {{ $baidusiteverification :=.Site.Params.baidusiteverification }}
+    {{ if $baidusiteverification }}
+    <meta name="baidu-site-verification" content="{{ $baidusiteverification }}" />
+    {{ end }}
+
+    {{ $GoogleadsenseAccount :=.Site.Params.GoogleadsenseAccount }}
+    {{ if $GoogleadsenseAccount }}
+    <meta name="google-adsense-account" content="{{ $GoogleadsenseAccount }}">
+    {{ end }}
+    {{ $adsbygoogle :=.Site.Params.adsbygoogle }}
+    {{ if $adsbygoogle }}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{$adsbygoogle}}"
+        crossorigin="anonymous"></script>
+    {{ end }}
+
+
+    {{ $metafbtwitter :=.Site.Params.metafbtwitter }}
+    {{ if $metafbtwitter }}
+    <meta name="twitter:title" content="{{ .Title }}" />
+    <meta name="twitter:description" content="{{ .Page.Params.description }}" />
+    <meta name="twitter:card" content="summary" />
+    {{ $twitterimage :=.Site.Params.twitterimage }}
+    {{ if $twitterimage }}
+    <meta name="twitter:image" content="{{ $twitterimage }}" />
+    {{ end }}
+    {{ if $contentauthor }}
+    <meta name="twitter:site" content="@{{ $contentauthor }}" />
+    {{ end }}
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:description" content="{{ .Page.Params.description }}" />
+    <meta property="og:type" content="website" />
+    {{ if $contentauthor }}
+    <meta property="og:site_name" content="{{ $contentauthor }}" />
+    {{ end }}
+    <meta property="og:url" content="{{ .Permalink }}" />
+    {{ end }}
+
+    <!-- aspose.com -->
+    {{ if and (eq $faviconfolder "aspose") (eq $CurrentSection "com")}}
+    <link href="/templates/asposecom/css/style.css" rel="stylesheet">
+	
+	 <!--this style sheet is for consent mode pop up #ConsentMode -->
+    <link href="./css/v2/light.css" rel="stylesheet">
+    {{ end }}
+
+    <!-- aspose.cloud -->
+    {{ if eq $faviconfolder "aspose" }}
+    {{ if eq $CurrentSection "cloud" }}
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap);
+
+        .hero h1,
+        .hero p {
+            color: var(--white);
+            display: table;
+        }
+
+        .btn-cta-red,
+        .btn-cta-yellow {
+            border-radius: 0;
+            font-weight: 500;
+        }
+
+        .hero {
+            background-image: url(/images/header-bg.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 70px;
+            color: var(--white)
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            line-height: 38px;
+        }
+
+        .hero a.btn-link {
+            color: var(--white);
+            text-decoration: underline !important;
+        }
+
+        body {
+            font-display: optional
+        }
+    </style>
+    <!--<link href="./css/v2/bootstrap.min.css" rel="stylesheet"> 
+    <link href="./css/v2/generic.bundle.min.css" rel="stylesheet">
+    <link href="./css/v2/inner_web.css" rel="stylesheet">-->
+
+
+    <link href="/templates/asposecloud/css/style.css" rel="stylesheet">
+
+
+    {{ end }}
+    {{ end }}
+
+    <!-- groupdocs.com -->
+    {{ if eq $faviconfolder "groupdocs" }}
+    {{ if eq $CurrentSection "com" }}
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap);
+
+        .hero h1,
+        .hero p {
+            color: var(--white);
+            display: table;
+        }
+
+        .btn-cta-red,
+        .btn-cta-yellow {
+            border-radius: 0;
+            font-weight: 500;
+        }
+
+        .hero {
+            background-image: url(/images/header-bg.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            padding: 10rem 0 8rem;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 70px;
+            color: var(--white)
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            line-height: 38px;
+        }
+
+        .hero a.btn-link {
+            color: var(--white);
+            text-decoration: underline !important;
+        }
+
+        body {
+            font-display: optional
+        }
+    </style>
+    <link href="./css/v2/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/v2/generic.bundle.min.css" rel="stylesheet">
+    <link href="./css/v2/inner_web.css" rel="stylesheet">
+    {{ end }}
+    {{ end }}
+    <!-- conholdate.com -->
+    {{ if eq $faviconfolder "conholdate" }}
+    {{ if eq $CurrentSection "com" }}
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap);
+
+        .hero h1,
+        .hero p {
+            color: var(--white);
+            display: table;
+        }
+
+        .btn-cta-red,
+        .btn-cta-yellow {
+            border-radius: 0;
+            font-weight: 500;
+        }
+
+        .hero {
+            background-image: url(/images/header-bg.svg);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+            padding: 10rem 0 8rem;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 70px;
+            color: var(--white)
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            line-height: 38px;
+        }
+
+        .hero a.btn-link {
+            color: var(--white);
+            text-decoration: underline !important;
+        }
+
+        body {
+            font-display: optional
+        }
+    </style>
+    <link href="./css/v2/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/v2/conholdate.bundle.min.css" rel="stylesheet">
+    <link href="./css/v2/inner_web.css" rel="stylesheet">
+    {{ end }}
+    {{ end }}
+
+    <!-- fileformat.com -->
+    {{ if eq $faviconfolder "fileformat" }}
+    {{ if eq $CurrentSection "com" }}
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap);
+
+        body {
+            font-display: optional
+        }
+    </style>
+    <link href="./css/v2/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/v2/generic.bundle.min.css" rel="stylesheet">
+    <link href="./css/v2/inner_web.css" rel="stylesheet">
+    {{ end }}
+    {{ end }}
+
+    <!-- documentprocessing.com -->
+    {{ if and (eq $faviconfolder "documentprocessing") (eq $CurrentSection "com") }}
+    <link href="/templates/documentprocessing/css/style.css" rel="stylesheet">
+    {{ end }}
+
+    <!-- aspose.org -->
+    {{ if and (eq $faviconfolder "asposeorg") (eq $CurrentSection "com" ) }}
+    <link href="/templates/asposeorg/css/style.css" rel="stylesheet">
+    {{ end }}
+
+    {{ if not (or (in .Site.BaseURL "qa") (in .Site.BaseURL "localhost")) }}
+
+    {{ $googleAnalytics :=.Site.Params.GoogleAnalytics }}
+    {{ if $googleAnalytics }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ $googleAnalytics }}"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date()); gtag('config', {{ $googleAnalytics }});</script>
+    {{ end }}
+
+    {{ $googletagmanager :=.Site.Params.googletagmanager }}
+    {{ if $googletagmanager }}
+	
+	<!--this script is for consent mode pop up #ConsentMode -->
+    <script>
+        // Define dataLayer and the gtag function.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+    
+        // Set default consent to 'denied' as a placeholder
+        // Determine actual values based on your own requirements
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+        </script>
+	
+	
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', '{{ $googletagmanager }}');</script>
+    <!-- End Google Tag Manager -->
+    {{ end }}
+    {{ $ga4analytics :=.Site.Params.ga4analytics }}
+    {{ if $ga4analytics }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{$ga4analytics}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', '{{$ga4analytics}}');
+    </script>
+    {{ end }}
+    {{ end }}
+    {{ if .Page.IsTranslated }}
+    {{- partial "langswitcher.html" . -}}
+    {{ end }}
+
+    <!-- aspose.dev -->
+    {{ if and (eq $faviconfolder "asposedev") (eq $CurrentSection "com" ) }}
+    <link href="/templates/asposedev/css/style.css" rel="stylesheet">
+    {{ end }}
+
+    {{ if not (or (in .Site.BaseURL "qa") (in .Site.BaseURL "localhost")) }}
+
+    {{ $googleAnalytics :=.Site.Params.GoogleAnalytics }}
+    {{ if $googleAnalytics }}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ $googleAnalytics }}"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date()); gtag('config', {{ $googleAnalytics }});</script>
+    {{ end }}
+
+   
+    
+    {{ $ga4analytics :=.Site.Params.ga4analytics }}
+    {{ if $ga4analytics }}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{$ga4analytics}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', '{{$ga4analytics}}');
+    </script>
+    {{ end }}
+    {{ end }}
+    {{ if .Page.IsTranslated }}
+    {{- partial "langswitcher.html" . -}}
+    {{ end }}
+
+</head>

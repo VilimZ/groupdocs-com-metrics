@@ -1,0 +1,9 @@
+<div class="col-lg-6 rowblock innerblocks">
+    <div class="d-flex">
+    <h4><a href='{{ .Get "readmorelink"}}' class="text-dark">{{ .Get "producttitle" }}<small>{{ .Get "productfamily" }}</small></a></h4>
+    </div>
+    <p class="mb-4">{{ .Get "producttext" }}</p>
+    <div class="referencelink">
+        {{ if isset .Params "continuelink" }}<a class="text-dark" href='{{ .Get "continuelink"}}'><small><i class="las la-arrow-right mr-1"></i>{{ .Get "continuetext" }}</small></a>{{ end }}
+    </div>
+</div>

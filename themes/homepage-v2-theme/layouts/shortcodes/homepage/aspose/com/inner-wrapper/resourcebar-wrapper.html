@@ -1,0 +1,18 @@
+
+<div class='containe-fluid statsbar {{ .Get "customclass"}}'>
+    <div class="container stats text-left">
+        <div class="row">
+    <div class="col-lg-12">
+    <h3>{{ .Get "bartitle" }}</h3>
+    <p>{{ .Get "bartext" }}</p>
+    <div class="resourcelinks">
+        {{ if isset .Params "resourcetxt1" }}<a href='{{ .Get "resourcelinks1" }}' class="text-cta-yellow">{{ .Get "resourcetxt1" }}</a>{{ end }}
+        {{ if isset .Params "resourcetxt2" }}<a href='{{ .Get "resourcelinks2" }}' class="text-cta-yellow">{{ .Get "resourcetxt2" }}</a>{{ end }}
+        {{ if isset .Params "resourcetxt3" }}<a href='{{ .Get "resourcelinks3" }}' class="text-cta-yellow">{{ .Get "resourcetxt3" }}</a>{{ end }}
+        {{ if isset .Params "resourcetxt4" }}<a href='{{ .Get "resourcelinks4" }}' class="text-cta-yellow">{{ .Get "resourcetxt4" }}</a>{{ end }}
+        {{ if isset .Params "resourcetxt5" }}<a href='{{ .Get "resourcelinks5" }}' class="text-cta-yellow">{{ .Get "resourcetxt5" }}</a>{{ end }}
+    </div>
+    </div>
+    </div></div></div>
+    
+    

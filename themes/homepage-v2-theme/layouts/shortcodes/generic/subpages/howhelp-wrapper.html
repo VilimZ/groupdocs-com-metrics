@@ -1,0 +1,29 @@
+<div class="container-fluid howehelp">
+    <div class="container">
+      <div class="row d-center">
+         <div class="col-md-12 mb-3"><small>{{ .Get "smalltitle"}}</small>
+            <h2>{{ .Get "sectiontitle" }}</h2>
+        </div>
+         <div class="col-md-4 pr-lg-0">
+          <div class="offerbox bg-gr-primary">
+            <a href='{{ .Get "totallink" }}'><h5>{{ .Get "totaltitle" }}</h5>
+            <h3>{{ .Get "totalproduct" }}</h3></a>
+            <p>{{ .Get "totaldescription" }}</p>
+            <a href='{{ .Get "totallink" }}'>{{ .Get "readtext" }}</a>
+          </div></div>
+          <div class="col-md-4  pr-lg-0">
+            <div class="offerbox bg-bl-primary">
+              <a href='{{ .Get "totalnetlink" }}'>
+              <h5>{{ .Get "totaltitle" }}</h5>
+              <h3>{{ .Get "totalnetproduct" }}</h3></a>
+              <p>{{ .Get "totalnetdescription" }}</p>
+              <a href='{{ .Get "totalnetlink" }}'>{{ .Get "readtext" }}</a>
+            </div></div>
+         <div class="col-md-4">
+          <div class="offerbox bg-drk-primary">
+            <a href='{{ .Get "totaljavalink" }}'>
+                <h5>{{ .Get "totaltitle" }}</h5>
+                <h3>{{ .Get "totaljavaproduct" }}</h3></a>
+                <p>{{ .Get "totaljavadescription" }}</p>
+                <a href='{{ .Get "totaljavalink" }}'>{{ .Get "readtext" }}</a>
+          </div></div></div></div></div>

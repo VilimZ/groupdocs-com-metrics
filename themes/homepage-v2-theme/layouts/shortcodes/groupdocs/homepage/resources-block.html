@@ -1,0 +1,12 @@
+<div class="col-lg-4">
+    <h4><a href='{{ .Get "resourcelink"}}'>{{ .Get "resourcetitle"}}</a></h4>
+    <a href='{{ .Get "resourcelink"}}'><img src='{{ .Get "resourceimg"}}' alt='{{ .Get "resourcealt"}}' width="100%"></a>
+    <ul>
+        <li><a href='{{ .Get "resourcelistlink"}}'>{{ .Get "resourcelisttext"}}</a></li>
+        <li><a href='{{ .Get "resourcelistlink2"}}'>{{ .Get "resourcelisttext2"}}</a></li>
+        <li><a href='{{ .Get "resourcelistlink3"}}'>{{ .Get "resourcelisttext3"}}</a></li>
+        {{ if isset .Params "resourcelisttext4" }} <li><a href='{{ .Get "resourcelistlink4"}}'>{{ .Get "resourcelisttext4"}}</a></li>{{ end }}
+        {{ if isset .Params "resourcelisttext5" }} <li><a href='{{ .Get "resourcelistlink5"}}'>{{ .Get "resourcelisttext5"}}</a></li>{{ end }}
+        {{ if isset .Params "resourcelisttext6" }} <li><a href='{{ .Get "resourcelistlink6"}}'>{{ .Get "resourcelisttext6"}}</a></li>{{ end }}
+    </ul>
+</div>

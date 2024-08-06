@@ -1,0 +1,41 @@
+<!-- code to get url segments -->
+{{ $url := .Page.Permalink }}
+
+{{ $urlSegments := (split $url "/") }}
+
+{{ $firstUrlElement := index $urlSegments 3}}
+{{ $secondUrlElement := index $urlSegments 4}}
+
+{{ $lastUrlElement := index $urlSegments (sub (len $urlSegments) 2) }}
+{{ $secLastUrlElement := index $urlSegments (sub (len $urlSegments) 3) }}
+{{/* $lastUrlElement := index (split $url "/") (sub (len (split $url "/")) 2) */}}
+
+{{ .Scratch.Set "firstUrlElement" $firstUrlElement }}
+{{ .Scratch.Set "secondUrlElement" $secondUrlElement }}
+{{ .Scratch.Set "secLastUrlElement" $secLastUrlElement }}
+{{ .Scratch.Set "lastUrlElement" $lastUrlElement }}
+
+{{ $currLang := site.LanguageCode }}
+
+{{ if eq $currLang ""}}
+{{ $currLang = "en"}}
+{{ end }}
+
+{{ $langCodeForUrls := "" }}
+{{ if not (eq $currLang "en") }}
+{{ $langCodeForUrls = $currLang }}
+{{ end }}
+
+{{ .Scratch.Set "currLang" $currLang}}
+{{ .Scratch.Set "langCodeForUrls" $langCodeForUrls}}
+
+<!--
+1: {{ $firstUrlElement }}
+2: {{ $secondUrlElement }}
+N-2: {{ $secLastUrlElement }}
+N: {{ $lastUrlElement }}
+-->
+
+<!-- <br><br><br>
+{{ $currLang }}
+{{ $langCodeForUrls }} -->

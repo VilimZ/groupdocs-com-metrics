@@ -1,0 +1,29 @@
+<!-- Load Metrics Data here? -->
+{{/* .Scratch.Set "varSetInBaseOf" "This variable was set in Baseof.html template" */}}
+
+{{ $totalDownloadsJsonData := getJSON (index (index .Site.Data.metrics.scriptslinks "downloads") "totalDownloads") }}
+{{ $totalLicensesJsonData := getJSON (index (index .Site.Data.metrics.scriptslinks "licenses") "totalLicenses") }}
+
+<!-- "https://script.google.com/macros/s/AKfycbzc2o1e35eczeGvip9TESeI4aiPTlIWtzjNe9HOPwPHgOYly2wZ-8Ei54Y7hHIIHmnD5Q/exec" -->
+
+{{ .Scratch.Set "totalDownloadsJsonData" $totalDownloadsJsonData }}
+{{ .Scratch.Set "totalLicensesJsonData" $totalLicensesJsonData }}
+
+
+{{ $productsDownloadsJsonData := getJSON (index (index .Site.Data.metrics.scriptslinks "downloads")
+"productsDownloads")}}
+{{ $productsLicensesJsonData := getJSON (index (index .Site.Data.metrics.scriptslinks "licenses")
+"productsLicenses")}}
+
+<!-- "https://script.google.com/macros/s/AKfycbyT760D5wJlefLmn5ZnvZrhy18iyqfwK9SkodNc-1Hr0a5rIu8o4pfsVfLh5b6CtlyGnQ/exec" -->
+
+{{ .Scratch.Set "productsDownloadsJsonData" $productsDownloadsJsonData }}
+{{ .Scratch.Set "productsLicensesJsonData" $productsLicensesJsonData }}
+
+{{ $translationFamilyDescriptionsJsonData := getJSON (index (index .Site.Data.metrics.scriptslinks "downloads")
+"translationFamilyDescriptions")}}
+{{ .Scratch.Set "translationFamilyDescriptionsJsonData" $translationFamilyDescriptionsJsonData }}
+
+{{ $translationAppsSectionJsonData := getJSON (index (index .Site.Data.metrics.scriptslinks "downloads")
+"translationAppsSection")}}
+{{ .Scratch.Set "translationAppsSectionJsonData" $translationAppsSectionJsonData }}

@@ -1,0 +1,17 @@
+<div class="container-fluid rowblocks sy-6">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-12 mb-5"><h2>{{ .Get "rowblockheading" }}</h2></div>
+    <div class="col-md-6 rowblock"><h3>{{ .Get "blocktitle" }}</h3><p>{{ .Get "blocktext" }}</p></div>
+    <div class="col-md-6 rowblock"><h3>{{ .Get "blocktitle2" }}</h3><p>{{ .Get "blocktext2" }}</p></div>
+    <div class="col-md-6 rowblock"><h3>{{ .Get "blocktitle3" }}</h3><p>{{ .Get "blocktext3" }}</p></div>
+    <div class="col-md-6 rowblock"><h3>{{ .Get "blocktitle4" }}</h3><p>{{ .Get "blocktext4" }}</p></div>
+     </div>
+     <div class="row">
+        <div class="col-md-6 rowblock"><h3>{{ .Get "blocktitle5" }}</h3><p>{{ .Get "blocktext5" }}</p></div>
+        <div class="col-md-6 rowblock"><h3>{{ .Get "blocktitle6" }}</h3><p>{{ .Get "blocktext6" }}</p></div>
+        <div class="col-md-6 rowblock"><h3>{{ .Get "blocktitle7" }}</h3><p>{{ .Get "blocktext7" }}</p></div>
+        <div class="col-md-6 rowblock"><h3>{{ .Get "blocktitle8" }}</h3><p>{{ .Get "blocktext8" }}</p></div>
+        {{ if isset .Params "blocktitlerepeat" }}<div class="col-md-6 rowblock"><h3>{{ .Get "blocktitlerepeat" }}</h3><p>{{ .Get "blocktextrepeat" }}</p></div>{{ end }}
+    </div>
+     </div></div>

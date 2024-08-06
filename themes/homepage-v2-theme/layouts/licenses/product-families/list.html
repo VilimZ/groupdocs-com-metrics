@@ -1,0 +1,251 @@
+{{ define "main" }}
+
+{{ .Content }}
+
+{{ $lastUrlElement := .Scratch.Get "lastUrlElement" }}
+
+{{ $nugetLinks := index .Site.Data.metrics.packagerlinks "nuget" }}
+{{ $npmLinks := index .Site.Data.metrics.packagerlinks "npm" }}
+{{ $pypiLinks := index .Site.Data.metrics.packagerlinks "pypi" }}
+{{ $releasesLinks := index .Site.Data.metrics.packagerlinks "releases" }}
+{{ $licensesLinks := index .Site.Data.metrics.packagerlinks "licenses" }}
+{{ $packagistLinks := index .Site.Data.metrics.packagerlinks "packagist" }}
+
+{{/* $lastUrlElement */}}
+
+
+{{ $totalLicensesJsonData := .Scratch.Get "totalLicensesJsonData" }}
+{{ $productsLicensesJsonData := .Scratch.Get "productsLicensesJsonData" }}
+
+
+{{ $totalLicenses := .Scratch.Get "totalLicenses"}}
+{{ $displayLabel := .Scratch.Get "displayLabel"}}
+{{ $homeTitle := .Scratch.Get "homeTitle"}}
+{{ $langCodeForUrls := .Scratch.Get "langCodeForUrls"}}
+
+{{ $homeUrl := ""}}
+{{ if eq $langCodeForUrls "" }}
+{{ $homeUrl = (print "/") }}
+{{ else }}
+{{ $homeUrl = (print "/" $langCodeForUrls "/") }}
+{{ end }}
+
+<!-- page header template start -->
+{{ .Scratch.Set "bcHome" (index (.Page.Scratch.Get "trDownloadsBreadcrums") "metrics") }}
+{{ .Scratch.Set "bcHomeLink" $homeUrl }}
+{{ .Scratch.Set "bcLink2" (index (.Page.Scratch.Get "trDownloadsBreadcrums") "licenses") }}
+{{ .Scratch.Set "bcLink2Url" (print $homeUrl "licenses/") }}
+{{ .Scratch.Set "bcLink3" "" }}
+{{ .Scratch.Set "bcLink3Url" "" }}
+
+{{ if eq $lastUrlElement "product-families" }}
+{{ .Scratch.Set "bcLink4" "" }}
+{{ .Scratch.Set "bcLink4Url" "" }}
+{{ else }}
+{{ .Scratch.Set "bcLink4" (index (.Page.Scratch.Get "trDownloadsBreadcrums") "families") }}
+{{ .Scratch.Set "bcLink4Url" (print $homeUrl "licenses/product-families/") }}
+{{ end }}
+
+{{ if eq $lastUrlElement "product-families" }}
+{{ .Scratch.Set "bcPage" (index (.Page.Scratch.Get "trDownloadsBreadcrums") "families") }}
+{{ else }}
+{{ .Scratch.Set "bcPage" $displayLabel }}
+{{ end }}
+
+{{ .Scratch.Set "innerHeaderTitleTop" (index (.Page.Scratch.Get "trLicensesPage") "header-top") }}
+{{ .Scratch.Set "innerHeaderTitle" $totalLicenses }}
+
+{{ if eq $lastUrlElement "product-families" }}
+{{ .Scratch.Set "innerHeaderText" (index (.Page.Scratch.Get "trLicensesPage") "header-bottom") }}
+{{ else }}
+{{ $innerHeader := (replace (index (.Page.Scratch.Get "trLicensesPage") "header-bottom") "KEEPFAMILY" $displayLabel) }}
+{{ .Scratch.Set "innerHeaderText" $innerHeader }}
+{{end }}
+
+
+{{ partial "metrics/inner-header-wrapper.html" . }}
+
+<!-- page header template end -->
+
+{{ $cardLayout := 0}}
+
+{{ $total := 0 }}
+
+
+
+{{ if eq $lastUrlElement "product-families" }}
+
+{{ if eq $cardLayout 1 }}
+
+{{ .Scratch.Set "secHeading" (index (.Page.Scratch.Get "trLicensesPage") "table-header")}}
+{{ .Scratch.Set "secDescription" ""}}
+{{ .Scratch.Set "secSubHeading" ""}}
+
+{{ partial "metrics/blocks-start.html" . }}
+
+
+{{ range $totalLicensesJsonData.data }}
+
+{{ if eq .Category "Family"}}
+
+<div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+    <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+        <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+        <p style="color:#606469;font-size:14px;min-height:10px;">{{ .Type }} licenses</p>
+        <h3>{{ lang.FormatNumberCustom 0 .Total }}</h3>
+        <p style="min-height:26px;">Total licenses for {{ .Type }}.
+        </p>
+        <div class="btn-box" style="display: block;"><a href='{{ strings.ToLower .FamilyKey }}'><span
+                    style="color:#0052b3;">View {{ .FamilyName }}
+                    Download Details</span></a></div>
+    </div>
+</div>
+{{ end }}
+{{ end }}
+
+{{ partial "metrics/blocks-end.html" . }}
+{{ else }}
+<!-- table layout-->
+
+{{ .Scratch.Set "secHeading" (index (.Page.Scratch.Get "trLicensesPage") "table-header")}}
+{{ .Scratch.Set "secDescription" ""}}
+{{ .Scratch.Set "secSubHeading" ""}}
+
+{{ partial "metrics/blocks-start.html" . }}
+{{ partial "metrics/blocks-end.html" . }}
+
+{{ .Scratch.Set "colSecTitle" ""}}
+
+<!--{{ partial "metrics/col-headers-product-family.html" . }}-->
+{{ partial "metrics/col-headers-product-family-licenses.html" . }}
+
+{{ $rank := 0 }}
+
+
+{{ range $totalLicensesJsonData.data }}
+
+{{ if eq .Category "Family"}}
+
+{{ $rank = add $rank 1}}
+
+{{ $total  := .Total }}
+{{ if eq $total "" }} 
+{{ $total = 0 }}
+{{ else if eq $total  "0"}}
+{{ $total = 0 }}
+{{ end }}
+
+
+<ol class="flex-row">
+    <li class="flex-cell" style="flex: 10%;">{{ $rank }}</li>
+    <li class="flex-cell" style="flex: 30%;"><span><a href="{{lower .FamilyKey}}">{{ .Type }}</a></span></li> 
+    <li class="flex-cell" style="flex: 15%;"><span>{{ lang.FormatNumberCustom 0 $total }}</span></li>
+    <!--<li class="flex-cell" style="flex: 30%;"><span><a href="{{lower .FamilyKey}}">View  {{ .Type }} Family Products</a></span></li>--> 
+    <li class="flex-cell" style="flex: 30%;"></li>
+    <li class="flex-cell" style="flex: 5%;"></li>
+    <li class="flex-cell" style="flex: 5%;"></li>
+</ol>
+
+
+{{ end }}
+{{end }}
+
+{{ partial "metrics/col-footer.html" . }}
+{{ end }}
+
+
+
+{{ else }}
+<!-- individual package manager details -->
+
+{{/* .Scratch.Set "secHeading" (printf "%s" ( $lastUrlElement | humanize) | printf "%s%s" "Explore licenses by " | printf "%s") */}}
+{{ .Scratch.Set "secHeading" (replace (index (.Page.Scratch.Get "trLicensesPage") "table-header") "KEEPFAMILY" $displayLabel) }}
+{{ .Scratch.Set "secDescription" ""}}
+{{ .Scratch.Set "secSubHeading" ""}}
+
+{{ partial "metrics/blocks-start.html" . }}
+
+{{ partial "metrics/blocks-end.html" . }}
+
+{{ .Scratch.Set "colSecTitle" ""}}
+
+<!--{{ partial "metrics/col-headers.html" . }}-->
+{{ partial "metrics/col-headers-licenses-prodfamilies.html" . }}
+
+{{ $rank := 0 }}
+{{ range $productsLicensesJsonData.data }}
+
+{{ if eq $lastUrlElement (strings.ToLower .FamilyKey) }}
+
+
+{{ $total := .TotalSoFar }}
+{{ if eq $total "" }} 
+{{ $total = 0 }}
+{{ else if eq $total  "0"}}
+{{ $total = 0 }}
+{{ end }}
+
+{{if gt $total 0 }}
+<!-- list table here-->
+{{ $rank = add $rank 1}}
+{{ $product := .Product }}
+{{ $family := .FamilyName }}
+{{ $platform := .Platform }}
+
+
+{{/* .Scratch.Set "secSubHeading" "Hello" */}}
+
+{{/* .Scratch.Set "product" $product */}}
+{{/* .Scratch.Set "family" $family */}}
+{{/* .Scratch.Set "platform" $platform */}}
+{{/* .Scratch.Set "total" $total */}}
+
+{{/* partial "metrics/col-row.html" . */}}
+
+{{ $downloadLink := "" }}
+<!--
+{{ if eq (lower .PackageManager) "nuget"}}
+{{ $downloadLink = index $nugetLinks .Product }}
+{{ else if eq (lower .PackageManager) "npm"}}
+{{ $downloadLink = index $npmLinks .Product }}
+{{ else if eq (lower .PackageManager) "pypi"}}
+{{ $downloadLink = index $pypiLinks .Product }}
+{{ else if eq (lower .PackageManager) "releases"}}
+{{ $downloadLink = index $releasesLinks .Product }}
+{{ else if eq (lower .PackageManager) "packagist"}}
+{{ $downloadLink = index $packagistLinks .Product }}
+{{ end }}
+-->
+<!--License metrics indi-products are links to releases page-->
+{{$downloadLink = index $licensesLinks .Product}}
+
+
+<ol class="flex-row">
+    <li class="flex-cell" style="flex: 10%;">{{ $rank }}</li>
+    {{if not $downloadLink }}
+    <li class="flex-cell" style="flex: 35%;"><!--<a href='#' style="color: var(--blue);">-->
+        <span>{{ .Product }}</span></li>
+    {{ else }}
+    <li class="flex-cell" style="flex: 35%;"><!--<a href='#' style="color: var(--blue);">-->
+        <span><a href="{{$downloadLink}}">{{ .Product }}</a></span></li>
+    {{ end }}
+    <li class="flex-cell" style="flex: 20%;"><span>{{ .LicenseType }}</span></li>
+    <li class="flex-cell" style="flex: 20%;"><span>{{ .Platform }}</span></li>
+    <li class="flex-cell" style="flex: 15%;"><span>{{ lang.FormatNumberCustom 0 $total }}</span></li>
+</ol>
+
+
+
+<!-- list table ends -->
+{{ end }}
+{{ end }}
+
+{{ end }}
+
+{{ partial "metrics/col-footer.html" . }}
+
+
+
+{{ end }}
+
+{{ end }}

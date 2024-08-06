@@ -1,0 +1,11 @@
+<div class='card-box-to {{ .Get "numberblock" }}' style="will-change: background, transform; background-color: rgb(247, 247, 247); transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" 
+data-w-id='{{ .Get "dataid" }}'>
+<div class="product-content-cards">
+  
+<div class="cc-header-cards"><img src='{{ .Get "cardimgsrc"}} ' alt='{{ .Get "cardimgalt"}}' width="80" style='filter:grayscale({{.Get "filtercolor"}})'><div class="text-number">{{ .Get "cardnumber"}}</div></div>
+<h3 class="card-title card-small"><a href='{{ .Get "cardtitlelink"}}'>{{ .Get "cardtitletext"}}</a><br></h3>
+<p class="paragraph-gray">{{ .Get "cardtext"}}</p>
+<p><a href='{{ .Get "cardreadmorelink"}}' class="btn btn-link pl-0 pr-0">{{ .Get "cardreadmore"}}</a> <a href='{{ .Get "carddownloadink"}}' class="btn btn-link pl-3">{{ .Get "carddownload"}}</a></p>
+  
+  {{ .Inner }}
+</div></div>

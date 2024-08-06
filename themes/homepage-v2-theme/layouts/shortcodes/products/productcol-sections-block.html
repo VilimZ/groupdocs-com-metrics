@@ -1,0 +1,8 @@
+{{ if isset .Params "product-link" }}<div class="col-lg-4 mb-5 productplatform">
+<a href='{{ .Get "product-link"}}' title='{{ .Get "product-heading" }}'><img src='{{ .Get "productimg" }}' width="48" height="48" alt='{{ .Get "product-heading" }}' class='bg-{{ .Get "platformcolor" }}'></a>
+<h4><a href='{{ .Get "product-link"}}' class="btn-link">{{ .Get "product-heading" }}</a></h4>
+<p>{{ .Get "product-text"}}</p>
+<a href='{{ .Get "product-link"}}' class="btn-link">
+{{ .Get "product-link-text"}}</a>
+</div>
+{{ end }}

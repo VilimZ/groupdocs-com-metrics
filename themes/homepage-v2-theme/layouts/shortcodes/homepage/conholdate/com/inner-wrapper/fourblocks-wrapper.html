@@ -1,0 +1,34 @@
+
+<div class="container-fluid fourblocks sy-6">
+    <div class="container">
+    <div class="row d-start">
+    <div class="col-lg-6">
+    <div class="blockcards bgcard1">
+    <i class='las la-{{ .Get "icoClass1" }}'></i>
+    <h3>{{ .Get "fbheading1" }}</h3>
+    <p>{{ .Get "fbtext1"}}</p>
+    {{ if isset .Params "fblinktext1" }}<a href='{{ .Get "fblink1" }}'>{{ .Get "fblinktext1"}}</a>{{ end }}
+    </div></div>
+    <div class="col-lg-6">
+        <div class="blockcards bgcard2">
+            <i class='las la-{{ .Get "icoClass2" }}'></i>
+        <h3>{{ .Get "fbheading2" }}</h3>
+        <p>{{ .Get "fbtext2"}}</p>
+    {{ if isset .Params "fblinktext2" }}<a href='{{ .Get "fblink2" }}'>{{ .Get "fblinktext2"}}</a>{{ end }}
+        </div></div>
+        <div class="col-lg-6">
+            <div class="blockcards bgcard3">
+                <i class='las la-{{ .Get "icoClass3" }}'></i>
+                <h3>{{ .Get "fbheading3" }}</h3>
+            <p>{{ .Get "fbtext3"}}</p>
+    {{ if isset .Params "fblinktext3" }}<a href='{{ .Get "fblink3" }}'>{{ .Get "fblinktext3"}}</a>{{ end }}
+            </div></div>
+    <div class="col-lg-6">
+        <div class="blockcards bgcard4">
+            <i class='las la-{{ .Get "icoClass4" }}'></i>
+        <h3>{{ .Get "fbheading4" }}</h3>
+        <p>{{ .Get "fbtext4"}}</p>
+    {{ if isset .Params "fblinktext3" }}<a href='{{ .Get "fblink4" }}'>{{ .Get "fblinktext4"}}</a>{{ end }}
+        </div></div>
+        </div></div></div>
+ 

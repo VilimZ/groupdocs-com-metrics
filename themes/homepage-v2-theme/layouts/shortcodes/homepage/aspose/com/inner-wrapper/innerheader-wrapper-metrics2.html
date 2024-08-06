@@ -1,0 +1,16 @@
+<div class='container-fluid innerheader {{ .Get "col-class" }}'>
+    <div class="container">
+        <ul class="innerbreadcrumb">
+            {{ if isset .Params "bchome" }}<li><a href='{{ .Get "bchomelink"}}'>{{ .Get "bchome"}}</a></li>{{ end }}
+            {{ if isset .Params "bclink2" }}<li><a href='{{ .Get "bclink2url" }}'>{{ .Get "bclink2"}}</a></li>{{ end }}
+            {{ if isset .Params "bclink3" }}<li><a href='{{ .Get "bclink3url" }}'>{{ .Get "bclink3"}}</a></li>{{ end }}
+            {{ if isset .Params "bclink4" }}<li><a href='{{ .Get "bclink4url" }}'>{{ .Get "bclink4"}}</a></li>{{ end }}
+            {{ if isset .Params "bcpage" }}<li>{{ .Get "bcpage"}}</li>{{ end }}
+        </ul>
+        
+    <h2 style="display: block;text-align: center;">{{ .Get "inheadertitletop" }}</h2>
+    <h1 id="totalmetrics2" style="font-size:120px;margin-top:40px;display:block;text-align: center;" class="count metrics-number4">{{/* .Get "inheadertitle" */}}{{ .Page.Scratch.Get "totalDownloads" }}</h1>
+    <h2 style="display: block;text-align: center;">{{ .Get "inheadertext" }}</h2>
+    <!--{{ if isset .Params "ctabtn" }}<a href='{{ .Get "ctalink" }}' class="btn btn-cta-yellow mt-5">{{ .Get "ctabtn"}}</a>{{ end }}{{ if isset .Params "ctabtn2" }}<a href='{{ .Get "ctalink2" }}' class="btn btn-link-header mt-lg-5">{{ .Get "ctabtn2" }} <i class="las la-arrow-right"></i></a> {{ end }}-->
+    </div></div>
+     

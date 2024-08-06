@@ -1,0 +1,8 @@
+
+    {{ $headingtext := .Get "headingtext" }}
+    <div class="landing-features-title"><h3>{{ $headingtext }}</h3></div>
+    <div class="features-inner">
+        <div class="features-wrapper">
+            {{.Inner}}
+        </div>
+    </div>

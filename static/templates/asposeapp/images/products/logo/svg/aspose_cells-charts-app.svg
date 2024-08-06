@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#3890C8;stroke-width:20;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#3890C8;stroke-width:20;stroke-linejoin:bevel;stroke-miterlimit:10;}
+	.st2{fill:#3890C8;}
+</style>
+<g id="Cells_Chart">
+	<g id="Ellipse_3">
+		<circle class="st0" cx="223" cy="255.5" r="40"/>
+	</g>
+	<g id="Ellipse_3_copy">
+		<circle class="st0" cx="351" cy="371.5" r="40"/>
+	</g>
+	<g id="Ellipse_3_copy_3">
+		<circle class="st0" cx="223" cy="62.5" r="40"/>
+	</g>
+	<g id="Ellipse_3_copy_3_1_">
+		<circle class="st0" cx="351" cy="178.5" r="40"/>
+	</g>
+	<g id="Ellipse_3_copy_3_2_">
+		<circle class="st0" cx="460" cy="58.5" r="40"/>
+	</g>
+	<g id="Ellipse_3_copy_2">
+		<circle class="st1" cx="460" cy="263.5" r="40"/>
+	</g>
+	<g id="Rectangle_2">
+		<rect x="5" y="5.5" class="st2" width="42" height="500"/>
+	</g>
+	<g id="Rectangle_2_copy">
+		<rect x="5" y="464.5" class="st2" width="500" height="42"/>
+	</g>
+	
+		<rect x="88.3" y="236.7" transform="matrix(0.7071 0.7071 -0.7071 0.7071 285.1302 28.6347)" class="st2" width="39.4" height="243.5"/>
+	
+		<rect x="86.8" y="44.7" transform="matrix(0.7071 0.7071 -0.7071 0.7071 148.909 -26.572)" class="st2" width="39.4" height="243.5"/>
+	
+		<rect x="264.8" y="265.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -138.0022 292.8499)" class="st2" width="39.4" height="95"/>
+	
+		<rect x="389" y="276.2" transform="matrix(0.7071 0.7071 -0.7071 0.7071 346.6422 -194.9879)" class="st2" width="39.4" height="89.5"/>
+	
+		<rect x="389" y="71.2" transform="matrix(0.7071 0.7071 -0.7071 0.7071 201.6853 -255.031)" class="st2" width="39.4" height="89.5"/>
+	
+		<rect x="266.8" y="74.2" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 573.1946 0.4698)" class="st2" width="39.4" height="89.5"/>
+</g>
+</svg>

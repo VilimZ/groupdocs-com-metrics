@@ -1,0 +1,442 @@
+ {{ $CurrentSection :=.Site.Params.contentsection }}
+{{ $faviconfolder :=.Site.Params.faviconfolder }}
+
+{{$currentcontentpath := print $faviconfolder "/" $CurrentSection}}
+
+{{ $dynamicmenuid := index site.Params.dynamicmenuid .Site.LanguageCode }}
+{{ if .Site.IsMultiLingual }}
+    {{ if (index site.Params.dynamicmenuid .Site.LanguageCode)}}
+        {{ $dynamicmenuid = (index site.Params.dynamicmenuid .Site.LanguageCode) }}
+    {{ end }}
+{{ end }}
+<script>
+    (function(i, s, o, g, r, a, m) {i['ContainerizeMenuObject'] = r; i[r] = i[r] || function() {(i[r].q = i[r].q || []).push(arguments)}, i[r].l = 1 * new Date(); a = s.createElement(o),m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.append(a)})(window, document, 'script', 'https://menu.containerize.com/scripts/engine.min.js?v=1.0.1', '{{ $dynamicmenuid }}');
+</script>
+
+<!-- aspose.com -->
+{{ if eq $faviconfolder "aspose" }}
+    {{ if eq $CurrentSection "com" }}
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.aspose.com/","sameAs":["https://search.aspose.com","https://docs.aspose.com","https://blog.aspose.com","https://forum.aspose.com","https://products-joomla.aspose.com","https://company.aspose.com","https://purchase.aspose.com","https://apireference.aspose.com"],"potentialAction":{"@type":"SearchAction","target":"https://search.aspose.com/search/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="/js/v2/asposemetrics.js"></script> 
+
+    <!--
+    {{ if eq .Site.BaseURL .Page.Permalink }}
+    <script src="/js/v2/asposemetrics.js"></script> 
+    {{ else if strings.Contains .Page.Permalink "/metrics/downloads" }}
+    <script src="/js/v2/metrics/aspose/downloads.js"></script> 
+    {{ end }}
+-->
+    <script type="text/javascript" src="/js/v2/slick.js"></script>
+     <script src="/js/v2/custom.js"></script>    
+<script src="/js/v2/clipboard.min.js"></script>
+<script>
+  new ClipboardJS('.copybtn')
+//new ClipboardJS(".copybtn"),$(".copybtn").click(function(){$(this).siblings(".copiedtooltip").show(),setTimeout(function(){$(".copiedtooltip").hide()},2e3)});
+</script>    
+<script src="/js/v2/run_prettify.js"></script>
+<link rel="stylesheet" href="./css/v2/sunburst.css">
+
+<!--this script is for consent mode pop up #ConsentMode -->
+
+<!--<a href="#consent-banner-settings">Cookies Settings</a> -->
+    <script>
+        var config = {
+            display: {
+                mode: "modal"
+            },
+            consent_types: [{
+                name: 'analytics_storage',
+                title: "Analytics storage",
+                description: 'Enables storage, such as cookies, related to analytics (for example, visit duration)',
+                default: 'granted'
+            }, {
+                name: "ad_storage",
+                title: "Ads storage",
+                description: "Enables storage, such as cookies, related to advertising",
+                default: 'granted'
+            }, {
+                name: 'ad_user_data',
+                title: "User Data",
+                description: 'Sets consent for sending user data to Google for online advertising purposes.',
+                default: 'granted'
+            }, {
+                name: 'ad_personalization',
+                title: "Personalization",
+                description: '  Sets consent for personalized advertising.',
+                default: 'granted'
+            }],
+            settings: {
+                title: "Cookies Settings",
+                description: "In order to provide you with best experience we use various...",
+                buttons: {
+                    save: "Save preferences",
+                    close: "Close"
+                }
+            },
+            modal: {
+                title: 'Cookies',
+                description: 'We are using various cookies files. Learn more in our [privacy policy](https://about.groupdocs.com/legal/privacy-policy/) and make your choice.',
+                buttons: {
+                    accept: 'Accept',
+                    settings: 'Settings',
+                    reject: 'Deny'
+                }
+            }
+        };
+    </script>
+
+    <script src="/js/v2/app.js"></script>
+    
+    <script>
+      cookiesBannerJs(
+        function() {
+          try {
+            return JSON.parse(localStorage.getItem('consent_preferences'));
+          } catch (error) {
+            return null;
+          }
+        },
+        function(consentState) {
+          gtag('consent', 'update', consentState);
+          localStorage.setItem('consent_preferences', JSON.stringify(consentState));
+        },
+        config
+      );
+    </script>
+
+
+        {{ end }}
+        {{ end }}
+<!-- /aspose.com -->
+
+<!-- aspose.cloud -->
+{{ if eq $faviconfolder "aspose" }}
+    {{ if eq $CurrentSection "cloud" }}
+    <link rel="stylesheet" href="./css/v2/line-awesome.min.css">
+     <script src="/js/v2/jquery.js"></script>
+     <script src="/js/v2/popper.js"></script>
+     <script src="/js/v2/bootstrap.min.js"></script>
+      <script src="/js/v2/lottie-player.min.js"></script>
+      <script type="text/javascript" src="/js/v2/slick.js"></script>
+      <script src="/js/v2/asposemetrics.js"></script>
+      <a href="#" id="backtop" aria-label="Go to Top" ><i class="las la-arrow-up"></i></a>
+<script src="/js/v2/clipboard.min.js"></script>
+<script src="/js/v2/conholdate.min.js" defer></script>
+<script>
+   new ClipboardJS('.copybtn')
+//new ClipboardJS(".copybtn"),$(".copybtn").click(function(){$(this).siblings(".copiedtooltip").show(),setTimeout(function(){$(".copiedtooltip").hide()},2e3)});
+</script>    
+<script src="/js/v2/run_prettify.js"></script>
+<link rel="stylesheet" href="./css/v2/sunburst.css">
+<style>.hplogos{margin-bottom: 3rem!important}</style>
+        {{ end }}
+        {{ end }}
+<!-- aspose.cloud -->
+
+<!-- groupdocs.com -->
+{{ if eq $faviconfolder "groupdocs" }}
+    {{ if eq $CurrentSection "com" }}
+    <link rel="stylesheet" href="./css/v2/line-awesome.min.css">
+     <script src="/js/v2/jquery.js"></script>
+     <script src="/js/v2/popper.js"></script>
+     <script src="/js/v2/bootstrap.min.js"></script>
+      <script src="/js/v2/groupdocs.min.js" defer></script>
+      <script src="/js/v2/lottie-player.min.js"></script>
+      <script type="text/javascript" src="/js/v2/slick.js"></script>
+      <a href="#" id="backtop" aria-label="Go to Top" ><i class="las la-arrow-up"></i></a>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://www.groupdocs.com/","sameAs":["https://search.groupdocs.com","https://docs.groupdocs.com","https://blog.groupdocs.com","https://forum.groupdocs.com","https://products.groupdocs.com","https://company.groupdocs.com","https://purchase.groupdocs.com","https://apireference.groupdocs.com"],"potentialAction":{"@type":"SearchAction","target":"https://search.groupdocs.com/search/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script src="/js/v2/clipboard.min.js"></script>
+<script>
+   new ClipboardJS('.copybtn')
+//new ClipboardJS(".copybtn"),$(".copybtn").click(function(){$(this).siblings(".copiedtooltip").show(),setTimeout(function(){$(".copiedtooltip").hide()},2e3)});
+</script>    
+<script src="/js/v2/run_prettify.js"></script>
+<link rel="stylesheet" href="./css/v2/sunburst.css">
+<script src="/js/v2/groupdocsmetrics.js"></script>
+
+<script> 
+  var urls = [
+    'https://blog.groupdocs.com/index.xml'
+  ];
+
+// Function to fetch and process RSS data
+function fetchAndProcess(url, containerId, limit) {
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      type: 'GET',
+      url: 'https://api.rss2json.com/v1/api.json',
+      data: {
+        rss_url: url
+      },
+      dataType: 'jsonp',
+      success: function(data) {
+        $.each(data.items.slice(0, limit), function(i, item) {
+          $(containerId).append('<li><a href="'+item.link+'" target="_blank" rel="nofollow"><span>'+item.title+'</span></a></li>');
+        });
+        resolve();
+      },
+      error: function(err) {
+        reject(err);
+      }
+    });
+  });
+}
+
+// Make a single request for all queries
+Promise.all([
+fetchAndProcess(urls[0], '#blog-feeds', 3),
+ ]).then(function() {
+  // All requests completed successfully
+}).catch(function(error) {
+  // Handle errors
+  console.error('Error:', error);
+});
+
+</script>
+     {{ end }}
+{{ end }}  
+<!-- /groupdocs.com -->
+
+<!-- conholdate.com -->
+{{ if eq $faviconfolder "conholdate" }}
+    {{ if eq $CurrentSection "com" }}    
+    <link rel="stylesheet" href="./css/v2/line-awesome.min.css">
+     <script src="/js/v2/jquery.js"></script>
+    <script src="/js/v2/cards.js"></script>
+    <script src="/js/v2/bootstrap.min.js"></script>
+    <script src="/js/v2/lottie-player.min.js"></script>
+    <script src="/js/v2/slick.js"></script>
+     <script src="/js/v2/conholdate.min.js"></script>
+     <script src="/js/v2/clipboard.min.js"></script>
+<script>
+   new ClipboardJS('.copybtn')
+//new ClipboardJS(".copybtn"),$(".copybtn").click(function(){$(this).siblings(".copiedtooltip").show(),setTimeout(function(){$(".copiedtooltip").hide()},2e3)});
+$('.blslider').slick({
+dots: false,
+infinite: true,
+speed: 500,
+slidesToShow: 3,
+slidesToScroll: 3,
+arrows: true,
+prevArrow: $('.blprev'),
+nextArrow: $('.blnext'),
+centerPadding: '0px',
+responsive: [
+{
+breakpoint: 1024,
+settings: {
+slidesToShow: 1,
+slidesToScroll: 1,
+}
+},
+{
+breakpoint: 600,
+settings: {
+slidesToShow: 1,
+slidesToScroll: 1
+}
+},
+{
+breakpoint: 480,
+settings: {
+slidesToShow: 1,
+slidesToScroll: 1
+}
+}
+]
+});
+    </script>    
+<script src="/js/v2/run_prettify.js"></script>
+<link rel="stylesheet" href="./css/v2/sunburst.css">
+<a href="#" id="backtop" aria-label="Go to Top" ><i class="las la-arrow-up"></i></a>
+<style>
+#blog-feeds .ftcard, #blog-feeds .headercard{background:none!important;max-width:100%; margin:0 0 20px!important;padding:0!important}
+#blog-feeds h5,#blog-feeds p,#blog-feeds p+a{display:none!important}
+#blog-feeds   h3 a{color: var(--dark);font-size: 14px;font-weight: 400;border-bottom: 1px dotted #b5b5b5;padding: 0px 0 10px!important;display: block;}
+#blog-feeds .ftcard:last-child   h3 a{border-bottom: 0px!important;}
+#blog-feeds .ftcard h3{min-height: inherit;}
+#blog-feeds .ftcard h3{min-height: inherit;}
+#blog-feeds .ftcard h3 a:hover {color: var(--blue)!important;}
+@media(max-width:768px){#blog-feeds .ftcard, #blog-feeds .headercard{margin:0 0 10px!important}}
+</style>
+<script>
+  var blogUrls = [
+    'https://blog.conholdate.com/index.xml',
+  ];
+
+  var docsAndBlogUrls = [
+    'https://docs.conholdate.com/convert-file-formats/index.xml',
+    'https://blog.conholdate.com/index.xml',
+  ];
+
+  // Function to fetch and process RSS data
+function fetchAndProcess(url, containerId, limit, isBlog) {
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      type: 'GET',
+      url: 'https://api.rss2json.com/v1/api.json',
+      data: {
+        rss_url: url
+      },
+      dataType: 'jsonp',
+      success: function(data) {
+        // Exclude the first three items for blog-feeds
+        var startIndex = (containerId === '#blog-feeds') ? 3 : 0;
+
+        // Sort items by publication date in descending order
+        data.items.sort(function(a, b) {
+          var dateA = new Date(a.pubDate);
+          var dateB = new Date(b.pubDate);
+          return dateB - dateA;
+        });
+
+        // Process and append the items based on the limit
+        $.each(data.items.slice(startIndex, startIndex + limit), function(i, item) {
+          if (isBlog) {
+            $(containerId).append('<div class="col-md-4 ftcard"><h5>Blog</h5><h3><a href="' + item.link + '" target="_blank" rel="nofollow">' + item.title + '</a></h3><p>' + item.description.slice(0, 130) + '...</p><a href="' + item.link + '" target="_blank" rel="nofollow">Continue Reading</a></div>');
+          } else {
+            $(containerId).append('<li><a href="' + item.link + '" target="_blank" rel="nofollow"><span>' + item.title + '</span></a></li>');
+          }
+        });
+
+        resolve();
+      },
+      error: function(err) {
+        reject(err);
+      }
+    });
+  });
+}
+  // Make a single request for all queries
+  Promise.all([
+    fetchAndProcess(blogUrls[0], '#blog-featured', 3, true), // Adjust the limit as needed
+    fetchAndProcess(docsAndBlogUrls[0], '#docs-feeds', 3, false),
+    fetchAndProcess(docsAndBlogUrls[1], '#blog-feeds', 3, true),
+  ]).then(function() {
+    // All requests completed successfully
+  }).catch(function(error) {
+    // Handle errors
+    console.error('Error:', error);
+  });
+</script>
+        {{ end }}
+        {{ end }}
+<!-- /conholdate.com -->
+
+<!-- fileformat.com -->
+{{ if eq $faviconfolder "fileformat" }}
+    {{ if eq $CurrentSection "com" }}
+    <link rel="stylesheet" href="./css/v2/line-awesome.min.css">
+    <script src="/js/v2/jquery.js"></script>
+    <script src="/js/v2/popper.js"></script>
+    <script src="/js/v2/bootstrap.min.js"></script>
+     <script src="/js/v2/lottie-player.min.js"></script>
+     <script type="text/javascript" src="/js/v2/slick.js"></script>
+     <a href="#" id="backtop" aria-label="Go to Top" ><i class="las la-arrow-up"></i></a>
+<script src="/js/v2/clipboard.min.js"></script>
+<script>
+  new ClipboardJS('.copybtn')
+//new ClipboardJS(".copybtn"),$(".copybtn").click(function(){$(this).siblings(".copiedtooltip").show(),setTimeout(function(){$(".copiedtooltip").hide()},2e3)});
+</script>    
+<script src="/js/v2/run_prettify.js"></script>
+<link rel="stylesheet" href="./css/v2/sunburst.css">
+<link rel="stylesheet" href="./css/v2/fileformatv2.css">
+ <script>
+ var urls = [
+  'https://news.fileformat.com/rss',
+  'https://blog.fileformat.com/index.xml',
+  'https://docs.fileformat.com/index.xml',
+  'https://forum.fileformat.com/latest'
+];
+
+// Function to fetch and process RSS data
+function fetchAndProcess(url, containerId, limit) {
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      type: 'GET',
+      url: 'https://api.rss2json.com/v1/api.json',
+      data: {
+        rss_url: url
+      },
+      dataType: 'jsonp',
+      success: function(data) {
+        $.each(data.items.slice(0, limit), function(i, item) {
+          $(containerId).append('<li><a href="'+item.link+'" target="_blank" rel="nofollow"><span>'+item.title+'</span></a></li>');
+        });
+        resolve();
+      },
+      error: function(err) {
+        reject(err);
+      }
+    });
+  });
+}
+
+// Make a single request for all queries
+Promise.all([
+  fetchAndProcess(urls[0], '#rss-feeds', 5), // Adjust the limit as needed
+  fetchAndProcess(urls[1], '#blog-feeds', 3),
+  fetchAndProcess(urls[2], '#docs-feeds', 3),
+  fetchAndProcess(urls[3], '#forum-feeds', 3)
+]).then(function() {
+  // All requests completed successfully
+}).catch(function(error) {
+  // Handle errors
+  console.error('Error:', error);
+});
+</script>
+        {{ end }}
+        {{ end }}
+<!-- documentprocessing.com -->
+        {{ if eq $faviconfolder "documentprocessing" }}
+    {{ if eq $CurrentSection "com" }}
+  <link rel="stylesheet" href="/templates/documentprocessing/css/dp_bundle.min.css">
+     <a href="#" id="backtop" aria-label="Go to Top" ><i class="las la-arrow-up"></i></a>
+        {{ end }}
+        {{ end }}
+<!-- aspose.cloud -->
+
+<!-- aspose.org -->
+{{ if eq $faviconfolder "asposeorg" }}
+    {{ if eq $CurrentSection "com" }}
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.aspose.com/","sameAs":["https://search.aspose.com","https://docs.aspose.com","https://blog.aspose.com","https://forum.aspose.com","https://products-joomla.aspose.com","https://company.aspose.com","https://purchase.aspose.com","https://apireference.aspose.com"],"potentialAction":{"@type":"SearchAction","target":"https://search.aspose.com/search/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="/js/v2/asposemetrics.js"></script>
+    <script type="text/javascript" src="/js/v2/slick.js"></script>
+     <script src="/js/v2/custom.js"></script>    
+<script src="/js/v2/clipboard.min.js"></script>
+<script>
+  new ClipboardJS('.copybtn')
+//new ClipboardJS(".copybtn"),$(".copybtn").click(function(){$(this).siblings(".copiedtooltip").show(),setTimeout(function(){$(".copiedtooltip").hide()},2e3)});
+</script>    
+<script src="/js/v2/run_prettify.js"></script>
+<link rel="stylesheet" href="./css/v2/sunburst.css">
+        {{ end }}
+        {{ end }}
+<!-- /aspose.org -->
+
+<!-- aspose.dev -->
+{{ if eq $faviconfolder "asposedev" }}
+    {{ if eq $CurrentSection "com" }}
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.aspose.com/","sameAs":["https://search.aspose.com","https://docs.aspose.com","https://blog.aspose.com","https://forum.aspose.com","https://products-joomla.aspose.com","https://company.aspose.com","https://purchase.aspose.com","https://apireference.aspose.com"],"potentialAction":{"@type":"SearchAction","target":"https://search.aspose.com/search/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    
+
+    <script src="/js/v2/asposemetrics.js"></script> 
+
+    
+    
+    <script type="text/javascript" src="/js/v2/slick.js"></script>
+     <script src="/js/v2/custom.js"></script>    
+<script src="/js/v2/clipboard.min.js"></script>
+<script>
+  new ClipboardJS('.copybtn')
+//new ClipboardJS(".copybtn"),$(".copybtn").click(function(){$(this).siblings(".copiedtooltip").show(),setTimeout(function(){$(".copiedtooltip").hide()},2e3)});
+</script>    
+<script src="/js/v2/run_prettify.js"></script>
+<link rel="stylesheet" href="./css/v2/sunburst.css">
+        {{ end }}
+        {{ end }}
+<!-- /aspose.dev -->

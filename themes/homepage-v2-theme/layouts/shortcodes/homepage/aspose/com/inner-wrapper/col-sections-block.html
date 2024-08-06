@@ -1,0 +1,7 @@
+<div class="col-lg-4">
+<i class='las la-{{ .Get "section-ico"}}'></i>
+<h4>{{ .Get "section-heading" }}</h4>
+<p>{{ .Get "section-paragraph"}}</p>
+{{ if isset .Params "sectionblock-link" }}<a href='{{ .Get "sectionblock-link"}}' class="btn-link">
+{{ .Get "section-block-text"}}</a>{{ end }}
+</div>  

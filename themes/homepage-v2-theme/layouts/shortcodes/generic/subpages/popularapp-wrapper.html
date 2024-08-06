@@ -1,0 +1,61 @@
+<div class="container-fluid sy-6 populartools" id="tools">
+    <div class="container">
+    <div class="row d-start">
+    <div class="col-lg-12">
+        {{ if isset .Params "appheading1" }}<small>{{ .Get "smallpopularheading"}}</small>{{ end }}
+        <h3>{{ .Get "popularheading"}}</h3>
+        <h2>{{ .Get "populartext"}}</h2>
+        </div>
+        {{ if isset .Params "appheading1" }}<div class="col-lg-4">
+            <div class="apptools">
+           <a href='{{ .Get "applink1"}}' class="pl-0"><h4>{{ .Get "appheading1"}}</h4></a>
+            <p>{{ .Get "apptext1"}}</p>
+            {{ if isset .Params "textlinkreading" }}<a href='{{ .Get "applink1"}}' class="pl-0"><small>{{ .Get "textlinkreading"}}</small></a>{{end}}
+            </div>
+        </div>
+        {{ end }}
+        {{ if isset .Params "appheading1" }}<div class="col-lg-4">
+            <div class="apptools">
+                <a href='{{ .Get "applink2"}}' class="pl-0"><h4>{{ .Get "appheading2"}}</h4></a>
+                <p>{{ .Get "apptext2"}}</p>
+                {{ if isset .Params "textlinkreading" }}<a href='{{ .Get "applink2"}}' class="pl-0"><small>{{ .Get "textlinkreading"}}</small></a>{{ end}}
+                </div>
+        </div>
+        {{ end }}
+        {{ if isset .Params "appheading3" }}<div class="col-lg-4">
+            <div class="apptools">
+                <a href='{{ .Get "applink3"}}' class="pl-0"><h4>{{ .Get "appheading3"}}</h4></a>
+                <p>{{ .Get "apptext3"}}</p>
+                {{ if isset .Params "textlinkreading" }}<a href='{{ .Get "applink3"}}' class="pl-0"><small>{{ .Get "textlinkreading"}}</small></a>{{ end }}
+                </div>
+        </div>
+        {{ end }}
+        {{ if isset .Params "appheading4" }}<div class="col-lg-4">
+            <div class="apptools">
+                <a href='{{ .Get "applink4"}}' class="pl-0"><h4>{{ .Get "appheading4"}}</h4></a>
+                <p>{{ .Get "apptext4"}}</p>
+                {{ if isset .Params "textlinkreading" }}<a href='{{ .Get "applink4"}}' class="pl-0"><small>{{ .Get "textlinkreading"}}</small></a>{{ end }}
+                </div>
+        </div>
+        {{ end }}
+        {{ if isset .Params "appheading5" }}
+        <div class="col-lg-4">
+            <div class="apptools">
+                <a href='{{ .Get "applink5"}}' class="pl-0"><h4>{{ .Get "appheading5"}}</h4></a>
+                <p>{{ .Get "apptext5"}}</p>
+                {{ if isset .Params "textlinkreading" }}<a href='{{ .Get "applink5"}}' class="pl-0"><small>{{ .Get "textlinkreading"}}</small></a>{{ end }}
+                </div>
+        </div>
+        {{ end }}
+        {{ if isset .Params "appheading6" }}<div class="col-lg-4">
+            <div class="apptools">
+                <a href='{{ .Get "applink6"}}' class="pl-0"><h4>{{ .Get "appheading6"}}</h4></a>
+                <p>{{ .Get "apptext6"}}</p>
+                {{ if isset .Params "textlinkreading" }}<a href='{{ .Get "applink6"}}' class="pl-0"><small>{{ .Get "textlinkreading"}}</small></a>{{ end }}
+                </div>
+            </div>
+            {{ end }}
+        <div class="col-lg-12 text-left mt-5">
+                 <a href='{{ .Get "allapplink"}}' class="btn btn-cta-red">{{ .Get "allapptext"}}</a>
+                 </div>
+        </div></div></div>

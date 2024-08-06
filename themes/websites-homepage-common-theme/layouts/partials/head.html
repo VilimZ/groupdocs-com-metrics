@@ -1,0 +1,280 @@
+<head>
+    {{ $CurrentSection :=.Site.Params.contentsection }}
+    {{ $faviconfolder :=.Site.Params.faviconfolder }}
+    {{$currentcontentpath := print $faviconfolder "/" $CurrentSection}}
+
+    {{ if (or (in .Site.BaseURL "qa-metrics") (in .Site.BaseURL "localhost") )  }}
+    <meta name="robots" content="noindex, nofollow"/>
+    {{ else }}
+    <meta name="robots" content="index, follow"/>
+    {{ end }}
+    
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="exists" content="yes" />
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="theme-color" content="#ffffff">
+    {{ $generator :=.Site.Params.generator }}
+    {{ if $generator }}
+        <meta name="generator" content="{{ $generator }}" />
+    {{ end }}
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="canonical" href="{{ .Permalink | absURL }}" />
+
+    <title>{{ .Title }}</title>
+    {{ with .Keywords }}<meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}">{{ end }}
+    <meta name="description" content="{{ .Page.Params.description }}" />
+
+
+<!-- conholdate.app -->
+{{ if eq $faviconfolder "conholdate" }}
+    {{ if eq $CurrentSection "app" }}
+    <link rel="alternate" href="https://www.conholdate.app/ca" hreflang="ca">
+    <link rel="alternate" href="https://www.conholdate.app/cs" hreflang="cs">
+    <link rel="alternate" href="https://www.conholdate.app/da" hreflang="da">
+    <link rel="alternate" href="https://www.conholdate.app/de" hreflang="de">
+    <link rel="alternate" href="https://www.conholdate.app/el" hreflang="el">
+    <link rel="alternate" href="https://www.conholdate.app/es" hreflang="es">
+    <link rel="alternate" href="https://www.conholdate.app/fil" hreflang="fil">
+    <link rel="alternate" href="https://www.conholdate.app/fr" hreflang="fr">
+    <link rel="alternate" href="https://www.conholdate.app/he" hreflang="he">
+    <link rel="alternate" href="https://www.conholdate.app/hi" hreflang="hi">
+    <link rel="alternate" href="https://www.conholdate.app/id" hreflang="id">
+    <link rel="alternate" href="https://www.conholdate.app/it" hreflang="it">
+    <link rel="alternate" href="https://www.conholdate.app/ja" hreflang="ja">
+    <link rel="alternate" href="https://www.conholdate.app/kk" hreflang="kk">
+    <link rel="alternate" href="https://www.conholdate.app/ko" hreflang="ko">
+    <link rel="alternate" href="https://www.conholdate.app/ms" hreflang="ms">
+    <link rel="alternate" href="https://www.conholdate.app/nl" hreflang="nl">
+    <link rel="alternate" href="https://www.conholdate.app/pl" hreflang="pl">
+    <link rel="alternate" href="https://www.conholdate.app/pt" hreflang="pt">
+    <link rel="alternate" href="https://www.conholdate.app/ro" hreflang="ro">
+    <link rel="alternate" href="https://www.conholdate.app/ru" hreflang="ru">
+    <link rel="alternate" href="https://www.conholdate.app/sv" hreflang="sv">
+    <link rel="alternate" href="https://www.conholdate.app/vi" hreflang="vi">
+    <link rel="alternate" href="https://www.conholdate.app/th" hreflang="th">
+    <link rel="alternate" href="https://www.conholdate.app/tr" hreflang="tr">
+    <link rel="alternate" href="https://www.conholdate.app/uk" hreflang="uk">
+    <link rel="alternate" href="https://www.conholdate.app/zh" hreflang="zh">
+    <link rel="alternate" href="https://www.conholdate.app/zh-hant" hreflang="zh-hant">
+
+<link rel="alternate" hreflang="x-default" href="https://www.conholdate.app">
+
+<!-- Safary theme color -->
+<meta name="theme-color" content="#111111" />
+{{ end }}
+{{ end }}  
+<!-- /conholdate.app -->
+
+    {{$filepath := print "images/" $faviconfolder "/favicon"}}
+    {{$staticfilepath := print "static/images/" $faviconfolder "/favicon"}}
+        
+    {{$applefavicon := print $filepath "/" "apple-touch-icon.png"}}
+    {{$applefaviconpath := print $staticfilepath "/" "apple-touch-icon.png"}}
+    
+    {{$favicon32 := print $filepath "/" "favicon-32x32.png"}}
+    {{$favicon32path := print $staticfilepath "/" "favicon-32x32.png"}}
+    
+    {{$favicon16 := print $filepath "/" "favicon-16x16.png"}}
+    {{$favicon16path := print $staticfilepath "/" "favicon-16x16.png"}}
+    
+    {{$safari := print $filepath "/" "safari-pinned-tab.svg"}}
+    {{$safaripath := print $staticfilepath "/" "safari-pinned-tab.svg"}}
+    
+    {{$favicon := print $filepath "/" "favicon.ico"}}
+    {{$faviconpath := print $staticfilepath "/" "favicon.ico"}}
+    
+    {{$browserconfig := print $filepath "/" "browserconfig.xml"}}
+    {{$browserconfigpath := print $staticfilepath "/" "browserconfig.xml"}}
+    
+        {{ if (fileExists $faviconpath) -}}
+            <link href="/{{ $favicon }}" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+        {{- end }}
+        {{ if (fileExists $applefaviconpath) -}}
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ $applefavicon }}">
+        {{- end }}
+    
+        {{ if (fileExists $favicon32path) -}}
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32 }}">
+        {{- end }}
+    
+        {{ if (fileExists $favicon16path) -}}
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16 }}">
+        {{- end }}
+    
+        {{ if (fileExists $safaripath) -}}
+        <link rel="mask-icon" href="{{ $safari }}" color="#FFFFFF">
+        {{- end }}
+    
+    
+        {{ if (fileExists $browserconfigpath ) -}}
+            <meta name="msapplication-config" content="{{ $browserconfig }}">
+        {{- end }}
+   
+    {{ $contentauthor :=.Site.Params.contentauthor }}
+    {{ if $contentauthor }}
+        <meta name="author" content="{{ $contentauthor }}" />
+    {{ end }}
+
+    
+
+    {{ $googlesiteverification :=.Site.Params.googlesiteverification }}
+    {{ if $googlesiteverification }}
+        <meta name="google-site-verification" content="{{ $googlesiteverification }}" />
+    {{ end }}    
+
+    {{ $yandexverification :=.Site.Params.yandexverification }}
+    {{ if $yandexverification }}
+        <meta name="yandex-verification" content="{{ $yandexverification }}" />
+    {{ end }}    
+
+    {{ $baidusiteverification :=.Site.Params.baidusiteverification }}
+    {{ if $baidusiteverification }}
+        <meta name="baidu-site-verification" content="{{ $baidusiteverification }}" />
+    {{ end }}    
+   
+    
+    {{ $metafbtwitter :=.Site.Params.metafbtwitter }}
+    {{ if $metafbtwitter }}
+        <meta name="twitter:title" content="{{ .Title }}" />
+        <meta name="twitter:description" content="{{ .Page.Params.description }}" />
+        <meta name="twitter:card" content="summary" />
+        {{ $twitterimage :=.Site.Params.twitterimage }}
+        {{ if $twitterimage }}
+            <meta name="twitter:image" content="{{ $twitterimage }}" />
+        {{ end }}
+        {{ if $contentauthor }}
+            <meta name="twitter:site" content="@{{ $contentauthor }}" />
+        {{ end }}
+        <meta property="og:title" content="{{ .Title }}" />
+        <meta property="og:description" content="{{ .Page.Params.description }}" />
+        <meta property="og:type" content="website" />
+        {{ if $contentauthor }}
+            <meta property="og:site_name" content="{{ $contentauthor }}" />
+        {{ end }}
+        <meta property="og:url" content="{{ .Permalink }}" />
+    {{ end }}
+ 
+
+
+<!-- aspose.com -->
+{{ if eq $faviconfolder "aspose" }}
+{{ if eq $CurrentSection "com" }}
+<link rel="stylesheet" href="./css/aspose_com.css" />
+
+ {{ end }}
+{{ end }}  
+<!-- aspose.cloud -->
+{{ if eq $faviconfolder "aspose" }}
+{{ if eq $CurrentSection "cloud" }}
+<link rel="stylesheet" href="./css/aspose_cloud.css"/>
+ {{ end }}
+{{ end }}  
+<!-- aspose.app -->
+{{ if eq $faviconfolder "aspose" }}
+{{ if eq $CurrentSection "app" }}
+<link rel="stylesheet" href="./css/aspose_app.css"/>
+  {{ end }}
+{{ end }}   
+<!-- groupdocs.com -->
+{{ if eq $faviconfolder "groupdocs" }}
+{{ if eq $CurrentSection "com" }}
+<link rel="stylesheet" href="./css/groupdocs_com.css"/>
+
+ {{ end }}
+{{ end }}  
+<!-- groupdocs.cloud -->
+{{ if eq $faviconfolder "groupdocs" }}
+{{ if eq $CurrentSection "cloud" }}
+<link rel="stylesheet" href="./css/groupdocs_cloud.css"/>    
+ {{ end }}
+{{ end }}  
+<!-- groupdocs.app -->
+{{ if eq $faviconfolder "groupdocs" }}
+{{ if eq $CurrentSection "app" }}
+<link rel="stylesheet" href="./css/groupdocs_app.css"/>    
+ {{ end }}
+{{ end }}  
+<!-- fileformat.com -->
+{{ if eq $faviconfolder "fileformat" }}
+{{ if eq $CurrentSection "com" }}
+<link rel="stylesheet" href="./css/fileformat_com.css"/>
+
+ {{ end }}
+{{ end }}  
+<!-- conholdate.com -->
+{{ if eq $faviconfolder "conholdate" }}
+{{ if eq $CurrentSection "com" }}
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://www.conholdate.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="All of Aspose and GroupDocs APIs combined in Conholdate.Total suite">
+  <meta property="og:description" content="Save time and software maintenance costs by running single instance of software, but serving multiple tenants/websites. Customization available for Joomla, Wordpress, Discourse, Confluence and other popular applications.">
+  <meta property="og:image" content="https://www.conholdate.com/images/conholdate/conholdate-og-image.png">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="conholdate.com">
+  <meta property="twitter:url" content="https://www.conholdate.com/">
+  <meta name="twitter:title" content="All of Aspose and GroupDocs APIs combined in Conholdate.Total suite">
+  <meta name="twitter:description" content="Save time and software maintenance costs by running single instance of software, but serving multiple tenants/websites. Customization available for Joomla, Wordpress, Discourse, Confluence and other popular applications.">
+  <meta name="twitter:image" content="https://www.conholdate.com/images/conholdate/conholdate-og-image.png">
+  <link rel="stylesheet" href="./css/conholdate_com.css"/>    
+ {{ end }}
+{{ end }}  
+<!-- conholdate.cloud -->
+{{ if eq $faviconfolder "conholdate" }}
+{{ if eq $CurrentSection "cloud" }}
+<link rel="stylesheet" href="./css/conholdate_cloud.css"/>    
+
+ {{ end }}
+{{ end }}
+<!-- conholdate.app -->
+{{ if eq $faviconfolder "conholdate" }}
+{{ if eq $CurrentSection "app" }}
+<link rel="stylesheet" href="./css/conholdate_app.css"/>
+<link rel="stylesheet" href="./css/localization_menu.min.css" />
+ {{ end }}
+{{ end }}
+<!-- containerize.com -->
+{{ if eq $faviconfolder "containerize" }}
+{{ if eq $CurrentSection "com" }}
+<link rel="stylesheet" href="./css/containerize_com.css"/>    
+
+ {{ end }}
+{{ end }}  
+<!-- /containerize.com -->
+
+<!-- codeporting.com -->
+{{ if eq $faviconfolder "codeporting" }}
+{{ if eq $CurrentSection "com" }}
+<link rel="stylesheet" href="./css/codeporting_com.css"/>    
+
+ {{ end }}
+{{ end }}
+ 
+{{ if not (or (in .Site.BaseURL "qa") (in .Site.BaseURL "localhost")) }}
+
+        {{ $googleAnalytics :=.Site.Params.GoogleAnalytics }}
+        {{ if $googleAnalytics }}
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ $googleAnalytics }}"></script>
+            <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+            gtag('js',new Date());gtag('config',{{ $googleAnalytics }});</script>
+        {{ end }}
+            
+        {{ $googletagmanager :=.Site.Params.googletagmanager }}
+        {{ if $googletagmanager }}
+        <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','{{ $googletagmanager }}');</script>
+        <!-- End Google Tag Manager -->
+        {{ end }}
+    {{ end }}
+
+    {{ if .Page.IsTranslated }}
+    {{- partial "langswitcher.html" . -}}
+    {{ end }}
+</head>

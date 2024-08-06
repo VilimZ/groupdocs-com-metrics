@@ -1,0 +1,8 @@
+<div class='containe-fluid {{ .Get "col-class"}}'>
+    <div class="container">
+        <div class="row d-start">
+        {{ if isset .Params "section-title" }}<div class="col-md-12 mb-5"><h2>{{ .Get "section-title" }}</h2>
+        </div>{{ end}}
+        {{ .Inner}}
+        <!--{{ if isset .Params "section-cta" }}<div class="col-md-12"><a href='{{ .Get "section-ctalink" }}' class="btn btn-cta-yellow mt-5">{{ .Get "section-cta" }}</a></div>{{ end }}-->
+         </div></div></div>

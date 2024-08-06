@@ -1,0 +1,15 @@
+
+<!--<div class="col-lg-4">
+<p style="color:#606469;font-size:14px;min-height:10px;">{{ .Get "btitle"}}</p>
+<h4>{{ .Get "section-heading" }}</h4>
+<p>{{ .Get "section-paragraph"}}</p>
+{{ if isset .Params "seclinktext" }}<div class="btn-box" style="display: block;padding-bottom:60px;"><a href='{{ .Get "seclink"}} '><span style="color:#0052b3;">{{ .Get "seclinktext"}}</span></a></div>{{end}}
+</div>  -->
+
+<ol class="flex-row">
+        <li class="flex-cell"><a href='{{.Get "plink"}}' style="color: var(--blue);"><span>{{ .Get "platform" }}</span></a></li>
+        <li class="flex-cell"><span>{{ .Get "downloads" }}</span></li>
+        <li class="flex-cell"><span>{{ .Get "source" }}</span></li>
+        <li class="flex-cell"><span>{{ .Get "lastModified" }}</span></li>
+</ol>
+

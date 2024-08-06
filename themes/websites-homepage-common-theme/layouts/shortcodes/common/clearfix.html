@@ -1,0 +1,6 @@
+{{ $divid := .Get "divid" }}
+{{ if $divid }}
+<div id="{{ $divid }}" class="clearfix">&nbsp;</div>
+{{ else }}
+<div class="clearfix">&nbsp;</div>
+{{ end }}

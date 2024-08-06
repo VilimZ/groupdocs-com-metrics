@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&display=swap');
+body{margin:0;padding:0; font-family: 'Jost', sans-serif!important; color:var(--primary)}
+:root {--primary:#1F3154;--white: var(--white);--dark:#1F3154;--yellow: #FFC700;--blue: #4187FF;--red: #AE0F04;--lite: #EAEAEA;--shine-blue: #1f3cd5;--litef8: #F8F8F8;--greenlite: #3DDC84;--litegray: #5c6474;--white:#FFFFFF;}
+*{transition: 300ms all ease-in-out!important;}
+.koinizelogo .venturelogo a {background-image: url(/images/koinize/koinize-white-large.png)!important;background-repeat: no-repeat!important;background-position: 0 0!important;background-size: 160px!important;margin-top: 5px!important;width: 200px!important;}
+a:hover{color:var(--blue)!important}
+body .nobg{background: var(--white)!important; background-color: var(--white)!important;}
+body .litebg{background-color: #F7F7F7; background:#F7F7F7;}
+body .darkbg{background: var(--dark); background-color:  var(--dark);}
+.overviewtxt h3 a{font-size: 16px; background: #D9D9D9; border-radius: 8px; padding:5px 10px; text-transform: uppercase;color:#5c6474;margin-bottom: 10px;display: inline-block}
+h1{font-weight: bold!important; color: var(--litegray);}
+h2 a{color:var(--primary)!important; font-size: 22px; text-transform: capitalize;font-weight: bold;line-height: 36px;min-height: 75px; display: block}
+p{margin-bottom: 0!important;}
+.btn-primary{background-color: #AE0F04!important; border-radius: 0!important; border:0!important;color:var(--white)!important;padding: 10px 35px!important;line-height: 30px!important;font-size: 18px!important;display: inline-block}
+.btn-primary:hover{background-color: var(--yellow)!important;color: var(--dark)!important;}
+
+.contentblock {background: linear-gradient(180deg, #E1E7FF 0%, var(--white) 30%, var(--white) 100%)!important}
+.threeblocks img{ max-height: 175px; margin:0 auto 50px; display: table; }
+.threeblocks {background: #FFFFFF;padding: 50px;border-radius: 20px;margin: 25px 0;display: block}
+.threeblocks h4,.threeblocks p{ color:var(--dark)!important}
+.threeblocks a:hover h4{ color:var(--blue)!important}
+@media (max-width:1024px) {
+.threeblocks img{max-width: 100%;}
+.threeblocks {padding: 20px;word-wrap: break-word}
+}
+
+/* Theme Mode */
+.light-theme .container-fluid{ background:#fafafa!important; color:#222222!important}
+.light-theme .threeblocks{background-color: #eaeaea!important;}
+.light-theme .threeblocks p, .light-theme .threeblocks a, .light-theme .threeblocks h4{color: #222222!important;}
+.container-fluid{ background:#111111!important; color:#ffffff!important}
+.threeblocks{background-color: #222222;}
+.threeblocks p, .threeblocks a, .threeblocks h4{color: #ffffff!important;}

@@ -1,0 +1,20 @@
+
+<div class="container-fluid fourblocks sy-6" id='{{ .Get "sectionid" }}'>
+    <div class="container">
+    <div class="row d-start">
+    <div class="col-lg-6">
+    <div class="blockcards bgcard1">
+        <a href='{{ .Get "tblink1" }}'><img src='{{ .Get "tbimg1" }}' alt='{{ .Get "tbheading1" }}' width="54" class="mb-4"></a>
+    <h3 class="mb-4"><a href='{{ .Get "tblink1" }}'>{{ .Get "tbheading1" }}</a></h3>
+    <p>{{ .Get "tbtext1"}}</p>
+    {{ if isset .Params "tblinktext1" }}<a href='{{ .Get "tblink1" }}'>{{ .Get "tblinktext1"}}</a>{{ end }}
+    </div></div>
+    <div class="col-lg-6">
+        <div class="blockcards bgcard2">
+            <a href='{{ .Get "tblink2" }}'><img src='{{ .Get "tbimg2" }}' alt='{{ .Get "tbheading2" }}' width="54" class="mb-4"></a>
+            <h3 class="mb-4"><a href='{{ .Get "tblink2" }}'>{{ .Get "tbheading2" }}</a></h3>
+        <p>{{ .Get "tbtext2"}}</p>
+    {{ if isset .Params "tblinktext2" }}<a href='{{ .Get "tblink2" }}'>{{ .Get "tblinktext2"}}</a>{{ end }}
+        </div></div> 
+        </div></div></div>
+ 

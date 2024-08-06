@@ -1,0 +1,115 @@
+<style>
+    .table-container {
+        /*border: 1px solid #ddd;
+        border-radius: 5px;*/
+        overflow: hidden;
+        margin-bottom: 60px;
+        padding: 0;
+    }
+
+    .flex-row {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid #dadce0;
+    }
+
+    .flex-row .flex-cell+a {
+        color: var(--blue);
+    }
+
+    .flex-heading {
+        flex: 1;
+        padding: 10px;
+        /*text-align: center;*/
+        font-weight: 500;
+        /*background-color: #f0f0f0;*/
+        /* Optional: Add background color for headings */
+        /*border-right: 1px solid #ddd;*/
+    }
+
+    .flex-cell {
+        flex: 1;
+        padding: 10px;
+        /*text-align: center;*/
+        /*border-right: 1px solid #ddd;*/
+        font-size: 14px;
+    }
+
+    /* .flex-cell:last-child,
+    .flex-heading:last-child {
+        /*border-right: none;*/
+    /*  text-align: right;
+    } */
+
+    @media (max-width: 670px) {
+
+        /* */
+        /* .flex-cell:nth-child(1),
+        .flex-heading:nth-child(1) {
+            flex-shrink: 1;
+        } */
+
+        .flex-cell:nth-child(3),
+        .flex-heading:nth-child(3) {
+            display: none;
+        }
+
+        .flex-cell:nth-child(4),
+        .flex-heading:nth-child(4) {
+            display: none;
+        }
+
+        .flex-cell:nth-child(5),
+        .flex-heading:nth-child(5) {
+            text-align: right;
+        }
+
+    }
+
+
+    @media (max-width: 768px) {
+        .table-container {
+            padding: 0;
+            overflow-x: visible;
+        }
+
+        .flex-cell,
+        .flex-heading {
+            border-right: none;
+            flex: 1 !important;
+        }
+
+        .flex-cell:nth-child(4),
+        .flex-heading:nth-child(4) {
+            display: none;
+        }
+    }
+</style>
+
+<div class='containe-fluid sb-3 st-6 col-section'>
+    <div class="container">
+        <div class="row d-start">
+            <!--         
+            <div class="col-md-12 mb-5">
+                <h2>{{ .Scratch.Get "colSecTitle" }}</h2>
+            </div>
+-->
+            <div class="col-lg-12">
+                <div class="table-container">
+                    <!-- Heading Row -->
+                    <div class="flex-row">
+                        <div class="flex-heading" style="flex: 10%;">{{index (.Page.Scratch.Get "trDownloadsCommon")
+                            "col-rank"}}</div>
+                        <div class="flex-heading" style="flex: 35%;">{{index (.Page.Scratch.Get "trDownloadsCommon")
+                            "col-product"}}</div>
+                        <div class="flex-heading" style="flex: 20%;">{{index (.Page.Scratch.Get "trDownloadsCommon")
+                            "col-family"}}</div>
+                        <div class="flex-heading" style="flex: 20%;">{{index (.Page.Scratch.Get "trDownloadsCommon")
+                            "col-licensetypes"}}</div>
+                        <div class="flex-heading" style="flex: 15%;">{{index (.Page.Scratch.Get "trDownloadsCommon")
+                            "col-license"}}</div>
+                    </div>
+                    <!-- why did we need inner here? -->

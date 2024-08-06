@@ -1,0 +1,10 @@
+<div class="d-flex align-items-center">
+  <a href='{{ .Get "appurl"}}' title='{{ .Get "apptitle"}}'>
+    <img src='{{ .Get "appimgurl"}}' width="48" height="48" alt='{{ .Get "apptitle"}}'>
+  </a>
+    <div class="pl-2">
+      <a href='{{ .Get "appurl"}}'>{{ .Get "apptitle"}}<h5>{{ .Get "productfamilytext"}}</h5></a>
+    </div>
+</div>
+{{ .Inner }}
+</div>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Aspose.Diagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#3593CB;}
+</style>
+<g id="Flowchart">
+	<g>
+		<path class="st0" d="M323,152.3H185.3c-19.1,0-34.6-15.5-34.6-34.6V36.3c0-19.1,15.5-34.6,34.6-34.6H323
+			c19.1,0,34.6,15.5,34.6,34.6v81.4C357.6,136.8,342.1,152.3,323,152.3z M185.3,33.7c-1.4,0-2.6,1.2-2.6,2.6v81.4
+			c0,1.4,1.2,2.6,2.6,2.6H323c1.4,0,2.6-1.2,2.6-2.6V36.3c0-1.4-1.2-2.6-2.6-2.6H185.3z"/>
+	</g>
+	<g>
+		<path class="st0" d="M427.6,510.3c-44.7,0-81-36.3-81-81s36.3-81,81-81s81,36.3,81,81S472.2,510.3,427.6,510.3z M427.6,380.3
+			c-27,0-49,22-49,49s22,49,49,49s49-22,49-49S454.6,380.3,427.6,380.3z"/>
+	</g>
+	<g>
+		<path class="st0" d="M165.4,509.3H3.4V364.9h162V509.3z M35.4,477.3h98v-80.4h-98V477.3z"/>
+	</g>
+	<g>
+		
+			<rect x="125.7" y="235.5" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 431.6472 144.3237)" class="st0" width="36" height="104.9"/>
+	</g>
+	<g>
+		
+			<rect x="66.4" y="270" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 168.8644 655.6176)" class="st0" width="36" height="115.6"/>
+	</g>
+	<g>
+		
+			<rect x="236.2" y="126" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 508.3426 346.4118)" class="st0" width="36" height="94.5"/>
+	</g>
+	<g>
+		<path class="st0" d="M254.2,373.1l-87.6-87.6l87.6-87.6l87.6,87.6L254.2,373.1z M211.8,285.4l42.4,42.4l42.4-42.4l-42.4-42.4
+			L211.8,285.4z"/>
+	</g>
+	<g>
+		
+			<rect x="345.6" y="233" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 649.0118 -78.1154)" class="st0" width="36" height="104.9"/>
+	</g>
+	<g>
+		
+			<rect x="409.6" y="267.4" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 855.1356 632.9432)" class="st0" width="36" height="98"/>
+	</g>
+</g>
+</svg>

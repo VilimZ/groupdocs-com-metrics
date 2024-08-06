@@ -1,0 +1,7 @@
+<div class='containe-fluid {{ .Get "col-class"}}'  id='{{ .Get "sectionid" }}'>
+    <div class="container">
+        <div class="row d-start">
+        {{ if isset .Params "section-title" }}<div class="col-md-12 mb-5"><h2>{{ .Get "section-title" }}</h2>
+        </div>{{ end}}
+        {{ .Inner}}
+         </div></div></div>

@@ -1,0 +1,5 @@
+{{ if isset .Params "snipclass" }}<div class='snippetcode copy-text  {{ .Get "snipclass" }}'>
+    <pre id='{{ .Get "copyID"}}' class='prettyprint {{ .Get "langclass" }} linenums"'>{{ .Inner }}</pre>
+    <a class="copybtn" data-clipboard-target='#{{ .Get "copyID"}}'><i class="las la-copy"></i></a> 
+</div>
+{{ end }}

@@ -1,0 +1,243 @@
+{{ $title := .Title }}
+{{ $description := .Description }}
+
+{{ $firstUrlElement := .Scratch.Get "firstUrlElement"}}
+{{ $secondUrlElement := .Scratch.Get "secondUrlElement"}}
+{{ $secLastUrlElement := .Scratch.Get "secLastUrlElement"}}
+{{ $lastUrlElement := .Scratch.Get "lastUrlElement"}}
+
+{{ $totalDownloadsJsonData := .Scratch.Get "totalDownloadsJsonData" }}
+{{ $productsDownloadsJsonData := .Scratch.Get "productsDownloadsJsonData" }}
+{{ $translationFamilyDescriptionsJsonData := .Scratch.Get "translationFamilyDescriptionsJsonData" }}
+{{ $translationAppsSectionJsonData := .Scratch.Get "translationAppsSectionJsonData" }}
+
+{{ $currLang := .Scratch.Get "currLang"}}
+
+
+{{ $trFamilyDesc := "" }}
+{{ $trTop := "" }}
+
+
+<!-- {{ $baseUrl := replace .Site.BaseURL "/" ""}} -->
+{{ $page := ""}}
+
+
+{{ if eq $lastUrlElement "localhost:1313"}}
+{{ $page = "home" }}
+{{ else if eq $lastUrlElement "qa-metrics.groupdocs.com"}}
+{{ $page = "home" }}
+{{ else if eq $lastUrlElement "metrics.groupdocs.com"}}
+{{ $page = "home" }}
+{{ else if eq $lastUrlElement $currLang}}
+{{ $page = "home"}}
+{{ else if eq $lastUrlElement "downloads"}}
+{{ $page = "downloads"}}
+{{ else if eq $lastUrlElement "package-managers"}}
+{{ $page = "packagers"}}
+{{ else if eq $secLastUrlElement "package-managers"}}
+{{ $page = "indi-package"}}
+{{ else if eq $lastUrlElement "programming-languages"}}
+{{ $page = "languages"}}
+{{ else if eq $secLastUrlElement "programming-languages"}}
+{{ $page = "indi-language"}}
+{{ else if eq $lastUrlElement "product-families"}}
+{{ $page = "families"}}
+{{ else if eq $secLastUrlElement "product-families"}}
+{{ $page = "indi-family"}}
+{{end}}
+
+{{if eq $secLastUrlElement "product-families"}}
+{{ $trFamilyDesc = index (index (index $translationFamilyDescriptionsJsonData.data 0) $currLang) $lastUrlElement }}
+{{ $trTop = index (index (index (index $translationAppsSectionJsonData.data 0) "common") $currLang) "top"}}
+{{ end }}
+
+{{ $trDownloadsPage := (index (index (index $translationAppsSectionJsonData.data 0) $page) $currLang)}}
+{{ $trDownloadsBreadcrums := (index (index (index $translationAppsSectionJsonData.data 0) "menu-breadcrums")
+$currLang)}}
+{{ $trDownloadsCommon := (index (index (index $translationAppsSectionJsonData.data 0) "common") $currLang)}}
+
+{{ .Scratch.Set "trDownloadsPage" $trDownloadsPage}}
+{{ .Scratch.Set "trDownloadsCommon" $trDownloadsCommon}}
+{{ .Scratch.Set "trDownloadsBreadcrums" $trDownloadsBreadcrums}}
+
+{{ $totalDownloads := 0 }}
+{{ $displayLabel := "" }}
+{{ $productsCount := 0 }}
+
+<!-- total for downloads page -->
+{{if eq $lastUrlElement "downloads"}}
+{{ $total := index (index $totalDownloadsJsonData.data 0) "Total" }}
+{{ $totalDownloads = $total }}
+{{end}}
+
+{{ $listOfTypes := "" }}
+<!-- total of all package managers -->
+{{if eq $lastUrlElement "package-managers"}}
+{{ $productsCount = 0 }}
+{{ range $totalDownloadsJsonData.data }}
+{{ if eq .Category "Package Manager"}}
+{{ $totalDownloads = add $totalDownloads .Total }}
+{{ $productsCount = add $productsCount 1 }}
+{{ if eq $listOfTypes "" }}
+{{ $listOfTypes = .Type }}
+{{ else }}
+{{ $listOfTypes = (print $listOfTypes ", " .Type)}}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{if eq $secLastUrlElement "package-managers"}}
+
+{{ range $totalDownloadsJsonData.data }}
+{{ if eq $lastUrlElement (strings.ToLower .Type) }}
+{{ $displayLabel = .Type }}
+{{ $totalDownloads = .Total }}
+{{ end }}
+{{ end }}
+
+{{ $productsCount = 0 }}
+{{ range $productsDownloadsJsonData.data }}
+{{ if eq $lastUrlElement (strings.ToLower .PackageManager) }}
+
+
+
+{{ $productsCount = add $productsCount 1 }}
+
+
+{{ end }}
+
+{{ end }}
+
+{{end}}
+
+
+<!-- total of all platforms -->
+
+{{if eq $lastUrlElement "programming-languages"}}
+{{ $productsCount = 0 }}
+{{ range $totalDownloadsJsonData.data }}
+{{ if eq .Category "Platform"}}
+{{ if eq .Parent ""}}
+{{ $totalDownloads = add $totalDownloads .Total }}
+{{ $productsCount = add $productsCount 1 }}
+{{ if eq $listOfTypes "" }}
+{{ $listOfTypes = .Type }}
+{{ else }}
+{{ $listOfTypes = (print $listOfTypes ", " .Type)}}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{if eq $secLastUrlElement "programming-languages"}}
+
+{{ range $totalDownloadsJsonData.data }}
+{{ if and (eq $lastUrlElement (strings.ToLower .PlatformKey)) ( eq .Parent "") }}
+
+{{ $displayLabel = .Type }}
+{{ $totalDownloads = .Total }}
+
+{{ end }}
+{{ end }}
+
+
+{{ $productsCount = 0 }}
+{{ range $productsDownloadsJsonData.data }}
+{{ if eq $lastUrlElement (strings.ToLower .PlatformKey) }}
+{{ $productsCount = add $productsCount 1 }}
+{{ end }}
+{{ end }}
+
+{{end}}
+
+
+<!-- total of all product families -->
+{{if eq $lastUrlElement "product-families"}}
+{{ $productsCount = 0 }}
+{{ range $totalDownloadsJsonData.data }}
+{{ if eq .Category "Family"}}
+{{ $totalDownloads = add $totalDownloads .Total }}
+{{ $productsCount = add $productsCount 1 }}
+{{ if eq $listOfTypes "" }}
+{{ $listOfTypes = .Type }}
+{{ else }}
+{{ $listOfTypes = (print $listOfTypes ", " .Type)}}
+{{ end }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{if eq $secLastUrlElement "product-families"}}
+{{ range $totalDownloadsJsonData.data }}
+{{ if eq $lastUrlElement (strings.ToLower .FamilyKey) }}
+{{ $displayLabel = .Type }}
+{{ $totalDownloads = .Total }}
+{{ end }}
+{{ end }}
+
+{{ $productsCount = 0 }}
+{{ range $productsDownloadsJsonData.data }}
+{{ if eq $lastUrlElement (strings.ToLower .FamilyKey) }}
+{{ $productsCount = add $productsCount 1 }}
+{{ end }}
+{{ end }}
+
+{{end}}
+
+
+{{ $totalDownloads = lang.FormatNumberCustom 0 $totalDownloads }}
+
+{{ .Scratch.Set "totalDownloads" $totalDownloads }}
+{{ .Scratch.Set "displayLabel" $displayLabel }}
+
+
+
+{{ if eq $secLastUrlElement "package-managers"}}
+<!-- {{ $title = print "Top " $productsCount " " $displayLabel " File Format SDK Packages" }} -->
+{{ else if eq $secLastUrlElement "programming-languages"}}
+{{ $title = print "Top " $productsCount " " $displayLabel " File Format SDKs for " $displayLabel " Developers" }}
+{{ else if eq $secLastUrlElement "product-families"}}
+{{ $title = print $trTop $productsCount " " $trFamilyDesc }}
+{{end}}
+
+<!-- This can probably be removed???? -->
+{{ if eq $lastUrlElement "package-managers"}}
+{{ $title = print "File Format SDKs Packages From Top " $productsCount " Package Managers" }}
+{{ else if eq $lastUrlElement "programming-languages"}}
+{{ $title = print "File Format SDKs for Top " $productsCount " Programming Languages & Platforms" }}
+{{ else if eq $lastUrlElement "product-families"}}
+{{ $title = print "File Format SDKs for Top " $productsCount " File Formats Product Families" }}
+{{ else if eq $lastUrlElement "downloads"}}
+{{ $title = print "Top File Format SDKs Download Metrics" }}
+{{end}}
+
+{{ $homeTitle := "Metrics" }}
+{{ .Scratch.Set "homeTitle" $homeTitle }}
+
+<!-- getting title/description from translations sheet-->
+{{ $title = index $trDownloadsPage "title" }}
+{{ $description = index $trDownloadsPage "description" }}
+
+<!-- updatting tiles and descriptions with KEEP* variables-->
+{{ $title = replace $title "KEEPNUMBER" $productsCount }}
+{{ $title = replace $title "KEEPPACKAGEMANAGER" $displayLabel }}
+{{ $title = replace $title "KEEPLANGUAGE" $displayLabel }}
+{{ $title = replace $title "KEEPFAMILYDESCRIPTION" $trFamilyDesc }}
+{{ $description = replace $description "KEEPFAMILYDESCRIPTION" $trFamilyDesc }}
+{{ $title = replace $title "KEEPFAMILY" $displayLabel }}
+{{ $description = replace $description "KEEPPACKAGEMANAGERS" $listOfTypes }}
+{{ $description = replace $description "KEEPPACKAGEMANAGER" $displayLabel }}
+{{ $description = replace $description "KEEPLANGUAGES" $listOfTypes }}
+{{ $description = replace $description "KEEPLANGUAGE" $displayLabel }}
+{{ $description = replace $description "KEEPFAMILIES" $listOfTypes }}
+{{ $description = replace $description "KEEPFAMILY" $displayLabel }}
+
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}" />
+
+<!-- <br><br>
+{{ replace $title "KEEPNUMBER" $productsCount }} <br>
+{{ $description }} -->

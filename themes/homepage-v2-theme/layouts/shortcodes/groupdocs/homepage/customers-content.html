@@ -1,0 +1,13 @@
+<div class="col-lg-6">
+    <p>{{ .Get "customertext" }}</p>
+    <div class="text-white">
+        {{ if isset .Params "customerslink" }}
+        <a href='{{ .Get "customerslink" }}' class="text-white">{{ .Get "customerstext" }}</a>{{ end }}
+        {{ if isset .Params "developerslink" }}<a href='{{ .Get "developerslink" }}' class="text-white">{{ .Get "developerstext" }}</a>{{ end }}
+        {{ if isset .Params "industrieslink" }}<a href='{{ .Get "industrieslink" }}' class="text-white">{{ .Get "industriestext" }}</a>{{ end }}
+        {{ if isset .Params "countrieslink" }}<a href='{{ .Get "countrieslink" }}' class="text-white">{{ .Get "countriestext" }}</a>{{end}}
+    </div>
+</div>
+<div class="col-lg-6 text-right">
+    <lottie-player src='{{ .Get "globalanim" }}' background="transparent" speed=".5" style="width: 100%; height: 100%;" loop autoplay lazyLoad></lottie-player>
+</div>

@@ -1,0 +1,85 @@
+<style>
+    .table-container {
+        /*border: 1px solid #ddd;
+        border-radius: 5px;*/
+        overflow: hidden;
+        margin-bottom: 60px;
+        padding:0;
+    }
+
+    .flex-row {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid #dadce0;
+    }
+    .flex-row .flex-cell+a{
+        color:var(--blue);
+    }
+
+    .flex-heading {
+        flex: 1;
+        padding: 10px;
+        /*text-align: center;*/
+        font-weight: 500;
+        /*background-color: #f0f0f0;*/ /* Optional: Add background color for headings */
+        /*border-right: 1px solid #ddd;*/
+    }
+
+    .flex-cell {
+        flex: 1;
+        padding: 10px;
+        /*text-align: center;*/
+        /*border-right: 1px solid #ddd;*/
+        font-size: 14px;
+    }
+
+    .flex-cell:last-child,
+    .flex-heading:last-child {
+        /*border-right: none;*/
+        text-align: right;
+    }
+
+    @media (max-width: 768px) {
+        .table-container {
+            padding:0;
+        }
+
+        .flex-row {
+            /*flex-direction: row;*/
+        }
+
+        .flex-cell,
+        .flex-heading {
+            border-right: none;
+        }
+        .flex-cell:last-child,
+    .flex-heading:last-child {
+        display:none;
+    }
+    }
+</style>
+
+<div class='containe-fluid {{ .Get "col-class"}}'>
+    <div class="container">
+        <div class="row d-start">
+        {{ if isset .Params "section-title" }}<div class="col-md-12 mb-5"><h2>{{ .Get "section-title" }}</h2>
+        </div>{{ end}}
+            <div class="col-lg-12">
+                <div class="table-container">
+                    <!-- Heading Row -->
+                    <div class="flex-row">
+                        <div class="flex-heading">Platform</div>
+                        <div class="flex-heading">Downloads</div>
+                        <div class="flex-heading">Source</div>
+                        <div class="flex-heading">Last Updated</div>
+                    </div>
+                    {{ .Inner}}
+                </div>
+            </div>
+        
+        
+        <!--{{ if isset .Params "section-cta" }}<div class="col-md-12"><a href='{{ .Get "section-ctalink" }}' class="btn btn-cta-yellow mt-5">{{ .Get "section-cta" }}</a></div>{{ end }}-->
+         </div></div></div>

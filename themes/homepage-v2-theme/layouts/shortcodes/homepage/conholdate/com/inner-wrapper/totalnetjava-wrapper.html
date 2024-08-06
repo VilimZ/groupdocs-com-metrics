@@ -1,0 +1,16 @@
+<div class="row d-center py-5 mt-5">
+    <div class='col-md-4 featicon {{ .Get "produtClassName"}} '>
+        <a href='{{ .Get "headinglink"}}' title="Conholdate Product"><img src='{{ .Get "totalproductimg" }}' width="100%" alt='Conholdate.Total for {{ .Get "productid"}}'></a>
+        </div>
+    <div class="col-md-8 featxt">
+        <small>{{ .Get "ourproduct" }}</small>
+        <h3><a href='{{ .Get "headinglink"}}'>{{ .Get "totalheading" }}</a></h3>
+        <p>{{ .Get "totaloverview" }}</p>
+        <div class="d-flex flex-wrap featboxes">
+            <div class="col-md-4 pl-lg-0"><i class='las la-{{ .Get "iconft1" }}'></i><h4>{{ .Get "totalft1" }}</h4><p>{{ .Get "totalfttext1" }}</p></div>
+            <div class="col-md-4 pl-lg-0"><i class='las la-{{ .Get "iconft2" }}'></i><h4>{{ .Get "totalft2" }}</h4><p>{{ .Get "totalfttext2" }}</p></div>
+            <div class="col-md-4"><i class='las la-{{ .Get "iconft3" }}'></i><h4>{{ .Get "totalft3" }}</h4><p>{{ .Get "totalfttext3" }}</p></div>
+        </div>
+        <a href='{{ .Get "headinglink"}}' class='btn btn-cta-yellow'>{{ .Get "readmoretxt"}}</a> <a href='{{ .Get "downloadbtnlink"}}' class='btn btn-cta-link ml-3'>{{ .Get "downloadtxt"}}</a>
+    </div>    
+</div>

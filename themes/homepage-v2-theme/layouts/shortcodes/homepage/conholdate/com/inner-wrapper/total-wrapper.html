@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-6 featxt">
+    <small>{{ .Get "ourproduct" }}</small>
+        <h3><a href='{{ .Get "headinglink"}}'>{{ .Get "totalheading" }}</a></h3>
+        <h5>{{ .Get "productype1" }}</h5>
+        <p>{{ .Get "totaloverview" }}</p>
+    </div>
+    <div class="col-md-6 featboxes">
+        <div class="row">
+            <div class="col-md-6">
+                <i class='las la-{{ .Get "iconft1" }}'></i>
+                <h4>{{ .Get "totalft1" }}</h4>
+               <p>{{ .Get "totalfttext1" }}</p>
+            </div>
+            <div class="col-md-6">
+                <i class='las la-{{ .Get "iconft2" }}'></i>
+                <h4>{{ .Get "totalft2" }}</h4>
+                <p>{{ .Get "totalfttext2" }}</p>
+            </div>
+            <div class="col-md-6">
+                <i class='las la-{{ .Get "iconft3" }}'></i>
+                <h4>{{ .Get "totalft3" }}</h4>
+                <p>{{ .Get "totalfttext3" }}</p>
+            </div>
+            <div class="col-md-6">
+                <i class='las la-{{ .Get "iconft4" }}'></i>
+                <h4>{{ .Get "totalft4" }}</h4>
+                <p>{{ .Get "totalfttext4" }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 text-left">   
+        <a href='{{ .Get "headinglink"}}' class="btn btn-cta-red">{{ .Get "viewapis" }}</a>
+    </div>
+    </div>

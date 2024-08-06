@@ -1,0 +1,465 @@
+<style>
+    #divrow {
+        display: block;
+    }
+
+    #divcolumn {
+        display: none;
+    }
+
+    #divcolumn.row {
+        width: 100%;
+    }
+
+
+    .table-container {
+        /*border: 1px solid #ddd;
+        border-radius: 5px;*/
+        overflow: hidden;
+        margin-bottom: 60px;
+        padding: 0;
+        width: 100%;
+
+    }
+
+    .flex-row {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        width: 100%;
+        border-bottom: 1px solid #dadce0;
+    }
+
+    .flex-row .flex-cell+a {
+        color: var(--blue);
+    }
+
+    .flex-heading {
+        flex: 1;
+        padding: 10px;
+        /*text-align: center;*/
+        font-weight: 500;
+        /*background-color: #f0f0f0;*/
+        /* Optional: Add background color for headings */
+        /*border-right: 1px solid #ddd;*/
+    }
+
+    .flex-cell {
+        flex: 1;
+        padding: 10px;
+        /*text-align: center;*/
+        /*border-right: 1px solid #ddd;*/
+        font-size: 14px;
+    }
+
+    /* .flex-cell:last-child,
+    .flex-heading:last-child {
+        /*border-right: none;*/
+    /*  text-align: right;
+    } */
+
+    @media (max-width: 1024px) {
+        #divrow {
+            display: block;
+        }
+
+        #divcolumn {
+            display: none;
+        }
+
+        .table-container {
+            padding: 0;
+            overflow-x: visible;
+        }
+
+        .flex-cell,
+        .flex-heading {
+            border-right: none;
+            flex: 1 !important;
+        }
+
+
+        .flex-cell:nth-child(4),
+        .flex-heading:nth-child(4) {
+            display: none;
+        }
+
+
+        .flex-cell:nth-child(5),
+        .flex-heading:nth-child(5) {
+            display: none;
+        }
+
+        /*
+        .flex-cell:nth-child(6),
+        .flex-heading:nth-child(6) {
+            display: none;
+        }
+
+        .flex-cell:nth-child(7),
+        .flex-heading:nth-child(7) {
+            display: none;
+        }*/
+    }
+
+    @media (max-width: 670px) {
+        #divrow {
+            display: none;
+        }
+
+        #divcolumn {
+            display: block;
+        }
+
+
+    }
+</style>
+
+{{ $totalDownloadsJsonData := .Scratch.Get "totalDownloadsJsonData" }}
+{{ $productsDownloadsJsonData := .Scratch.Get "productsDownloadsJsonData" }}
+
+
+
+{{ $total := index (index $totalDownloadsJsonData.data 0) "Total" }}
+{{ $totalDownloads := lang.FormatNumberCustom 0 $total }}
+
+
+
+<div class='containe-fluid sb-3 st-6 col-section'>
+    <div id="divrow" class="container">
+        <div class="row d-start">
+
+            <!--
+            <div class="col-md-12 mb-5" >
+                <h2>Total Downloads</h2>
+            </div>
+            -->
+
+            {{ $currLang := .Page.Scratch.Get "currLang" }}
+
+
+            <!-- {{ if eq $currLang "en" }} 
+            {{ $currLang = "" }}
+            {{end}} -->
+
+            <div class="col-lg-12">
+                <div class="table-container">
+                    <!-- Heading Row -->
+                    <!--                    <div class="flex-row">
+                        <div class="flex-heading" style="flex: 10%;">Rank</div>
+                        <div class="flex-heading" style="flex: 35%;">Product</div>
+                        <div class="flex-heading" style="flex: 20%;">Family</div>
+                        <div class="flex-heading" style="flex: 20%;">Platform</div>
+                        <div class="flex-heading" style="flex: 15%;">Downloads</div>
+                    </div>
+                    -->
+
+                    <!-- why did we need inner here? -->
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 100%; background-color: #6855e3; color:white; font-size: 34px; font-weight: 600;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-heading" }}
+                        </li>
+                    </ol>
+
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 20%; background-color: #d0f7fe; color: #212529; font-size: 20px; font-weight: 400;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-total" }}
+                            </span></li>
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;">
+                            <span><a href="downloads/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "total" }}
+                                </a></span>
+                        </li>
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400; text-align: right;"><span>{{
+                                $totalDownloads }}</span></li>
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span></span></li>
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span></span></li>
+                        <!-- <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span></span></li>
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span></span></li> -->
+                        <li class="flex-cell"
+                            style="flex: 10%; font-size: 20px; font-weight: 400;  text-align: center;"><span><a
+                                    href="downloads/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-viewall" }}
+                                </a></span></li>
+                    </ol>
+
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 20%; background-color: #d0f7fe; color: #212529; font-size: 20px; font-weight: 400;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-packagers" }}
+                            </span></li>
+
+                        {{ $count := 1 }}
+                        {{ range $totalDownloadsJsonData.data }}
+
+                        {{ if eq .Category "Package Manager" }}
+                        {{ if eq .Parent "" }}
+                        {{ if le $count 2}}
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span><a
+                                    href="downloads/package-managers/{{lower .Type}}/">{{.Type}}</a></span></li>
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400; text-align: right;"><span>
+                                {{lang.FormatNumberCustom 0 .Total}}
+                            </span></li>
+                        {{ $count = add $count 1 }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+
+                        <li class="flex-cell" style="flex:10%; font-size: 20px; font-weight: 400; text-align: center;">
+                            <span><a href="downloads/package-managers/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-viewall" }}
+                                </a></span>
+                        </li>
+                    </ol>
+
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 20%; background-color: #d0f7fe; color: #212529; font-size: 20px; font-weight: 400;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-languages" }}
+                            </span></li>
+
+                        {{ $count = 1 }}
+                        {{ range $totalDownloadsJsonData.data }}
+
+                        {{ if eq .Category "Platform" }}
+                        {{ if eq .Parent "" }}
+                        {{ if le $count 2}}
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span><a
+                                    href="downloads/programming-languages/{{lower .PlatformKey}}/">{{.Type}}</a></span>
+                        </li>
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400; text-align: right;"><span>
+                                {{lang.FormatNumberCustom 0 .Total}}
+                            </span></li>
+                        {{ $count = add $count 1 }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+
+                        <li class="flex-cell" style="flex: 10%; font-size: 20px; font-weight: 400; text-align: center;">
+                            <span><a href="downloads/programming-languages/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-viewall" }}
+                                </a></span>
+                        </li>
+                    </ol>
+
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 20%; background-color: #d0f7fe; color: #212529; font-size: 20px; font-weight: 400;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-families" }}
+                            </span></li>
+                        {{ $count = 1 }}
+                        {{ range $totalDownloadsJsonData.data }}
+
+                        {{ if eq .Category "Family" }}
+                        {{ if eq .Parent "" }}
+                        {{ if le $count 2}}
+                        <li class="flex-cell" style="flex: 8%; min-width: 0; font-size: 18px; font-weight: 400;"><span><a
+                                    href="downloads/product-families/{{lower .FamilyKey}}/">{{.Type}}</a></span></li>
+                        <li class="flex-cell" style="flex: 8%; min-width: 0; font-size: 18px; font-weight: 400; text-align: right;"><span>
+                                {{lang.FormatNumberCustom 0 .Total}}
+                            </span></li>
+                        {{ $count = add $count 1 }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        <li class="flex-cell" style="flex: 10%; font-size: 20px; font-weight: 400; text-align: center;">
+                            <span><a href="downloads/product-families/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-viewall" }}
+                                </a></span>
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+
+
+            <!--{{ if isset .Params "section-cta" }}<div class="col-md-12"><a href='{{ .Get "section-ctalink" }}' class="btn btn-cta-yellow mt-5">{{ .Get "section-cta" }}</a></div>{{ end }}-->
+        </div>
+    </div>
+
+    <div id="divcolumn" class="container">
+        <div class="row d-start">
+
+            <!--
+            <div class="col-md-12 mb-5" >
+                <h2>Total Downloads</h2>
+            </div>
+            -->
+
+            {{ $currLang := .Page.Scratch.Get "currLang" }}
+
+
+            <!-- {{ if eq $currLang "en" }} 
+            {{ $currLang = "" }}
+            {{end}} -->
+
+            <div class="col-lg-12">
+                <div class="table-container">
+                    <!-- Heading Row -->
+                    <!--                    <div class="flex-row">
+                        <div class="flex-heading" style="flex: 10%;">Rank</div>
+                        <div class="flex-heading" style="flex: 35%;">Product</div>
+                        <div class="flex-heading" style="flex: 20%;">Family</div>
+                        <div class="flex-heading" style="flex: 20%;">Platform</div>
+                        <div class="flex-heading" style="flex: 15%;">Downloads</div>
+                    </div>
+                    -->
+
+                    <!-- why did we need inner here? -->
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 100%; background-color: #6855e3; color:white; font-size: 34px; font-weight: 600;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-heading" }}
+                        </li>
+                    </ol>
+
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 20%; background-color: #d0f7fe; color: #212529; font-size: 20px; font-weight: 400;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-total" }}
+                            </span></li>
+                    </ol>
+                    <ol class="flex-row">
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;">
+                            <span><a href="downloads/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "total" }}
+                                </a></span>
+                        </li>
+
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span>{{
+                                $totalDownloads }}</span></li>
+                    </ol>
+                    <ol class="flex-row">
+                        <!-- <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span></span></li>
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span></span></li> -->
+                        <li class="flex-cell" style="flex: 10%; font-size: 20px; font-weight: 400; text-align: center;">
+                            <span><a href="downloads/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-viewall" }}
+                                </a></span>
+                        </li>
+                    </ol>
+
+
+
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 20%; background-color: #d0f7fe; color: #212529; font-size: 20px; font-weight: 400;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-packagers" }}
+                            </span></li>
+                    </ol>
+                    <ol class="flex-row">
+
+                        {{ $count := 1 }}
+                        {{ range $totalDownloadsJsonData.data }}
+
+                        {{ if eq .Category "Package Manager" }}
+                        {{ if eq .Parent "" }}
+                        {{ if le $count 2}}
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span><a
+                                    href="downloads/package-managers/{{lower .Type}}/">{{.Type}}</a></span></li>
+
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span>
+                                {{lang.FormatNumberCustom 0 .Total}}
+                            </span></li>
+                    </ol>
+                    <ol class="flex-row">
+                        {{ $count = add $count 1 }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+
+                        <li class="flex-cell" style="flex:10%; font-size: 20px; font-weight: 400; text-align: center;">
+                            <span><a href="downloads/package-managers/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-viewall" }}
+                                </a></span>
+                        </li>
+                    </ol>
+
+
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 20%; background-color: #d0f7fe; color: #212529; font-size: 20px; font-weight: 400;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-languages" }}
+                            </span></li>
+                    </ol>
+                    <ol class="flex-row">
+
+                        {{ $count = 1 }}
+                        {{ range $totalDownloadsJsonData.data }}
+
+                        {{ if eq .Category "Platform" }}
+                        {{ if eq .Parent "" }}
+                        {{ if le $count 2}}
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span><a
+                                    href="downloads/programming-languages/{{lower .PlatformKey}}/">{{.Type}}</a></span>
+                        </li>
+
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span>
+                                {{lang.FormatNumberCustom 0 .Total}}
+                            </span></li>
+                    </ol>
+                    <ol class="flex-row">
+                        {{ $count = add $count 1 }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+
+                        <li class="flex-cell" style="flex: 10%; font-size: 20px; font-weight: 400;text-align: center;">
+                            <span><a href="downloads/programming-languages/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-viewall" }}
+                                </a></span>
+                        </li>
+                    </ol>
+
+
+                    <ol class="flex-row">
+                        <li class="flex-cell"
+                            style="flex: 20%; background-color: #d0f7fe; color: #212529; font-size: 20px; font-weight: 400;">
+                            {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-families" }}
+                            </span></li>
+                    </ol>
+                    <ol class="flex-row">
+                        {{ $count = 1 }}
+                        {{ range $totalDownloadsJsonData.data }}
+
+                        {{ if eq .Category "Family" }}
+                        {{ if eq .Parent "" }}
+                        {{ if le $count 2}}
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span><a
+                                    href="downloads/product-families/{{lower .FamilyKey}}/">{{.Type}}</a></span>
+                        </li>
+
+                        <li class="flex-cell" style="flex: 8%;  font-size: 18px; font-weight: 400;"><span>
+                                {{lang.FormatNumberCustom 0 .Total}}
+                            </span></li>
+                    </ol>
+                    <ol class="flex-row">
+                        {{ $count = add $count 1 }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                        <li class="flex-cell" style="flex: 10%; font-size: 20px; font-weight: 400; text-align: center;">
+                            <span><a href="downloads/product-families/">
+                                    {{ index (.Page.Scratch.Get "trDownloadsPage") "downloads-viewall" }}
+                                </a></span>
+                        </li>
+
+                    </ol>
+
+                </div>
+            </div>
+
+
+            <!--{{ if isset .Params "section-cta" }}<div class="col-md-12"><a href='{{ .Get "section-ctalink" }}' class="btn btn-cta-yellow mt-5">{{ .Get "section-cta" }}</a></div>{{ end }}-->
+        </div>
+    </div>
+</div>

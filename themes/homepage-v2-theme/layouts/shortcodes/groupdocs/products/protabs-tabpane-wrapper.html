@@ -1,0 +1,4 @@
+<div class='tab-pane pl-4 {{ .Get "activeClass"}}' id='{{.Get "target-pane"}}' role="tabpanel" aria-labelledby='{{.Get "target-pane"}}'><div class="row justify-content-between"><div class="col-lg-12 mb-5 mt-5"><small>{{ .Get "productname"}}</small><h4>{{ .Get "producttext"}}</h4></div>
+{{ .Inner }}
+{{ if isset .Params "featuresctatext" }}<div class="col-lg-12 my-5"><a href='{{.Get "featurescta"}}' class="btn btn-cta-red">{{ .Get "featuresctatext"}}</a></div>{{ end }}
+</div></div>

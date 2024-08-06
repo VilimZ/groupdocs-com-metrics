@@ -1,0 +1,4 @@
+{{ if isset .Params "whychooseblock" }}
+<div class='col-md-6 rowblock {{ .Get "xtraClass"}}'><span  id='{{.Get "boxid" }}' class="anchorjump" title=""></span><h3>{{ .Get "whychooseblock" }}</h3><p>{{ .Get "whyblocktext" }}</p></div>
+{{ end }}
+    

@@ -1,0 +1,172 @@
+ {{ $CurrentSection :=.Site.Params.contentsection }}
+{{ $faviconfolder :=.Site.Params.faviconfolder }}
+
+{{$currentcontentpath := print $faviconfolder "/" $CurrentSection}}
+
+
+{{ $dynamicmenuid := "aspose-en"}}
+{{ if .Site.IsMultiLingual }}
+    {{ if (index site.Params.dynamicmenuid .Site.LanguageCode)}}
+        {{ $dynamicmenuid = (index site.Params.dynamicmenuid .Site.LanguageCode) }}
+    {{ end }}
+{{ end }}
+
+<script>
+    (function(i, s, o, g, r, a, m) {i['ContainerizeMenuObject'] = r; i[r] = i[r] || function() {(i[r].q = i[r].q || []).push(arguments)}, i[r].l = 1 * new Date(); a = s.createElement(o),m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.append(a)})(window, document, 'script', 'https://menu.containerize.com/scripts/engine.min.js?v=1.0.1', '{{ $dynamicmenuid }}');
+</script>
+<!-- aspose.com -->
+{{ if eq $faviconfolder "aspose" }}
+    {{ if eq $CurrentSection "com" }}
+    <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<script>$("img").addClass("lazyload");</script>   
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.aspose.com/","sameAs":["https://search.aspose.com","https://docs.aspose.com","https://blog.aspose.com","https://forum.aspose.com","https://products-joomla.aspose.com","https://company.aspose.com","https://purchase.aspose.com","https://apireference.aspose.com"],"potentialAction":{"@type":"SearchAction","target":"https://search.aspose.com/search/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    <link href="./css/structure2.css" rel="stylesheet">
+ <style>.lang-selector-round{display:none!important}.topsearchbox {float: inherit!important;position: inherit!important;margin-right: inherit!important;padding-top: inherit!important;}.topsearchbox .topsearchbtn{display: flex;}</style>
+        {{ end }}
+        {{ end }}
+<!-- /aspose.com -->
+
+
+<!-- aspose.cloud -->
+{{ if eq $faviconfolder "aspose" }}
+    {{ if eq $CurrentSection "cloud" }}
+     <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<link rel="stylesheet" href="./css/structure2.css">
+<script>$("img").addClass("lazyload");</script>   
+     {{ end }}
+{{ end }}  
+<!-- /aspose.cloud -->
+
+
+<!-- aspose.app -->
+{{ if eq $faviconfolder "aspose" }}
+    {{ if eq $CurrentSection "app" }}
+     <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<link rel="stylesheet" href="./css/structure2.css">
+<script>$("img").addClass("lazyload");</script>   
+      {{ end }}
+{{ end }}  
+<!-- /aspose.app -->
+ 
+
+
+<!-- groupdocs.com -->
+{{ if eq $faviconfolder "groupdocs" }}
+    {{ if eq $CurrentSection "com" }}
+      <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<script>$("img").addClass("lazyload");</script>   
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"WebSite","url":"https://www.groupdocs.com/","sameAs":["https://search.groupdocs.com","https://docs.groupdocs.com","https://blog.groupdocs.com","https://forum.groupdocs.com","https://products.groupdocs.com","https://company.groupdocs.com","https://purchase.groupdocs.com","https://apireference.groupdocs.com"],"potentialAction":{"@type":"SearchAction","target":"https://search.groupdocs.com/search/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+    
+     {{ end }}
+{{ end }}  
+<!-- /groupdocs.com -->
+
+<!-- groupdocs.cloud -->
+{{ if eq $faviconfolder "groupdocs" }}
+    {{ if eq $CurrentSection "cloud" }}
+     <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+    <link rel="stylesheet" href="./css/structure2.css">
+<script>$("img").addClass("lazyload");</script>   
+     
+     {{ end }}
+{{ end }}  
+<!-- /groupdocs.cloud -->
+
+
+<!-- groupdocs.app -->
+{{ if eq $faviconfolder "groupdocs" }}
+    {{ if eq $CurrentSection "app" }}
+     <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+    <link rel="stylesheet" href="./css/structure2.css">
+<script>$("img").addClass("lazyload");</script>   
+     
+     {{ end }}
+{{ end }}  
+<!-- /groupdocs.app -->
+
+
+<!-- fileformat.com -->
+{{ if eq $faviconfolder "fileformat" }}
+    {{ if eq $CurrentSection "com" }}
+     <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<script>$("img").addClass("lazyload");</script>   
+<script src="/js/moment.min.js"></script>
+<script src="/js/rss-feeds.js"></script>
+<script>jQuery('#rss-feeds').hide();jQuery(function(){jQuery("#rss-feeds").rss("https://news.fileformat.com/rss",{limit:4,ssl:true,dateFormat:'MMMM, Do, YYYY',entryTemplate:'<li> <span><a href="/{url}" rel="nofollow">{title}</a><p>{date}</p></span></li>'})})
+$(function(){setTimeout(function(){jQuery('#rss-feeds').fadeIn();},2000);})
+$(function(){setTimeout(function(){$('#rss-feeds a[href^="/"]').attr('href',function(i,oldHref){return oldHref.substr(1);});},2500);})</script>     
+     {{ end }}
+{{ end }}  
+<!-- fileformat.com -->
+
+
+
+<!-- conholdate.com -->
+{{ if eq $faviconfolder "conholdate" }}
+    {{ if eq $CurrentSection "com" }}
+      <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<script>$("img").addClass("lazyload");</script>   
+     {{ end }}
+{{ end }}  
+<!-- /conholdate.com -->
+
+
+
+<!-- conholdate.cloud -->
+{{ if eq $faviconfolder "conholdate" }}
+    {{ if eq $CurrentSection "cloud" }}
+     <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<script>$("img").addClass("lazyload");</script>
+     {{ end }}
+{{ end }}  
+<!-- /conholdate.cloud -->
+
+
+
+<!-- conholdate.app -->
+{{ if eq $faviconfolder "conholdate" }}
+    {{ if eq $CurrentSection "app" }}
+ 
+    
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css media=screen>
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="/js/event_tracking.min.js"></script>
+    <script src="/js/api_endpoints.prod.js"></script>
+    <script src="/js/conholdate_app.js"></script>
+        <script src="/js/smoth-scroll.min.js"></script>
+    
+     {{ end }}
+{{ end }}  
+<!-- /conholdate.app -->
+
+<!-- containerize.com -->
+{{ if eq $faviconfolder "containerize" }}
+    {{ if eq $CurrentSection "com" }}
+     <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<script>$("img").addClass("lazyload");</script>   
+     {{ end }}
+{{ end }}  
+<!-- /containerize.com -->
+
+<!-- codeporting.com -->
+{{ if eq $faviconfolder "codeporting" }}
+    {{ if eq $CurrentSection "com" }}
+     <script src="/js/jquery-2.2.4.min.js"></script>
+    <script src="/js/lazysizes.min.js"></script>  
+<script>$("img").addClass("lazyload");</script>   
+     {{ end }}
+{{ end }}  
+<!-- /codeporting.com -->

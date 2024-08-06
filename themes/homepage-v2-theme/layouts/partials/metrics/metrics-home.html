@@ -1,0 +1,83 @@
+
+    <!-- page header template start -->
+    {{ .Scratch.Set "bcHome" "Home" }} 
+    {{ .Scratch.Set "bcHomeLink" "/" }}
+    {{ .Scratch.Set "bcLink2" "" }} 
+    {{ .Scratch.Set "bcLink2Url" "" }}
+    {{ .Scratch.Set "bcLink3" "" }} 
+    {{ .Scratch.Set "bcLink3Url" "" }}
+    {{ .Scratch.Set "bcLink4" "" }} 
+    {{ .Scratch.Set "bcLink4Url" "" }}
+    {{ .Scratch.Set "bcPage" "Metrics" }}
+    {{ .Scratch.Set "innerHeaderTitleTop" "" }} 
+    {{ .Scratch.Set "innerHeaderTitle" "Metrics" }} 
+    {{ .Scratch.Set "innerHeaderText" "Our Numbers Speak for Themselves!" }} 
+    
+    
+    {{ partial "metrics/inner-header-wrapper.html" . }}
+    
+    <!-- page header template end -->
+    
+    
+    {{ .Scratch.Set "secHeading" "Explore Metrics by Various Categories"}}
+    {{ .Scratch.Set "secDescription" ""}}
+    {{ .Scratch.Set "secSubHeading" ""}}
+    
+        {{ partial "metrics/blocks-start.html" . }}
+    
+        <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+            <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+                <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+                <p style="color:#606469;font-size:14px;min-height:10px;"></p>
+                <h3>Downloads Metrics</h3>
+                <p style="min-height:26px;">Explore how many times our APIs were downloaded by the developers.</p>
+                <div class="btn-box" style="display: block;"><a
+                        href='downloads'><span style="color:#0052b3;">View Downloads Metrics</span></a></div>
+                </div>
+        </div>
+    
+        <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+            <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+                <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+                <p style="color:#606469;font-size:14px;min-height:10px;"></p>
+                <h3>Forums Metrics</h3>
+                <p style="min-height:26px;">Explore how many developers were helped by our teams.</p>
+                <div class="btn-box" style="display: block;"><a
+                        href='#'><span style="color:#0052b3;">View Forums Metrics</span></a></div>
+                </div>
+        </div>
+    
+        <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+            <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+                <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+                <p style="color:#606469;font-size:14px;min-height:10px;"></p>
+                <h3>Licenses Metrics</h3>
+                <p style="min-height:26px;">Explore how many licenses were purchased by our customers.</p>
+                <div class="btn-box" style="display: block;"><a
+                        href='#'><span style="color:#0052b3;">View Licenses Metrics</span></a></div>
+                </div>
+        </div>
+    
+        <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+            <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+                <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+                <p style="color:#606469;font-size:14px;min-height:10px;"></p>
+                <h3>Customers Metrics</h3>
+                <p style="min-height:26px;">Explore how many customers love to use our APIs.</p>
+                <div class="btn-box" style="display: block;"><a
+                        href='#'><span style="color:#0052b3;">View Customers Metrics</span></a></div>
+                </div>
+        </div>
+    
+        <div class="col-lg-6" style="border-bottom: 1px solid #dadce0;">
+            <div class="blockcards bgcard1" style="background-color: var(--white);color:#000;margin-bottom:0px;">
+                <!--<i class='las la-{{/* .Get "icoClass1" */}}'></i>-->
+                <p style="color:#606469;font-size:14px;min-height:10px;"></p>
+                <h3>Developers Metrics</h3>
+                <p style="min-height:26px;">Explore how many developers enjoy working with our APIs.</p>
+                <div class="btn-box" style="display: block;"><a
+                        href='#'><span style="color:#0052b3;">View Developers Metrics</span></a></div>
+                </div>
+        </div>
+    
+        {{ partial "metrics/blocks-end.html" . }}

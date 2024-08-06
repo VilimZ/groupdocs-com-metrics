@@ -1,0 +1,19 @@
+        <div class="container-fluid subnav" id="sticky">
+            <div class="container">
+                <div class="row d-center">
+                <div class="col-lg-9">
+                    <ul class="unstyled d-flex">
+                        {{ if isset .Params "subnav1" }}<li><a href='{{ .Get "subnav1" }}'>{{ .Get "subnavtxt1" }}</a></li>{{ end }}
+                        {{ if isset .Params "subnav2" }}<li><a href='{{ .Get "subnav2" }}'>{{ .Get "subnavtxt2" }}</a></li>{{ end }}
+                        {{ if isset .Params "subnav3" }}<li><a href='{{ .Get "subnav3" }}'>{{ .Get "subnavtxt3" }}</a></li>{{ end }}
+                        {{ if isset .Params "subnav4" }}<li><a href='{{ .Get "subnav4" }}'>{{ .Get "subnavtxt4" }}</a></li>{{ end }}
+                        {{ if isset .Params "subnav5" }}<li><a href='{{ .Get "subnav5" }}'>{{ .Get "subnavtxt5" }}</a></li>{{ end }}
+                        {{ if isset .Params "subnav6" }}<li><a href='{{ .Get "subnav6" }}'>{{ .Get "subnavtxt6" }}</a></li>{{ end }}
+                    </ul>
+                </div>
+                <div class="col-lg-3 tr p-0">
+                    {{ if isset .Params "subbtn1" }}<a href='{{ .Get "subbtn1" }}' class="btn btn-cta-red cta-small">{{ .Get "subbtntxt1" }}</a>{{ end }}
+                    {{ if isset .Params "subbtn2" }}<a href='{{ .Get "subbtn2" }}'class="btn btn-cta-yellow cta-small">{{ .Get "subbtntxt2" }}</a>{{ end }}
+                 </div>
+            </div></div>
+</div>

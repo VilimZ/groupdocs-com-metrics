@@ -1,0 +1,11 @@
+{{ define "main" }}
+
+    {{ .Content }}
+
+
+    {{ partial "home/header.html" . }}
+    {{ partial "metrics/homewidget/downloadswidget.html" . }}
+    {{ partial "metrics/homewidget/licensesoldwidget.html" . }}
+    
+
+{{ end }}

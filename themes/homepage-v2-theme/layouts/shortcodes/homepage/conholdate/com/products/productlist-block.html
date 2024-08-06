@@ -1,0 +1,13 @@
+<div class="col-lg-6 rowblock innerblocks">
+    <div class="d-flex"><a href='{{ .Get "readmorelink"}}'><img src='{{ .Get "productimg"}}' style="filter:grayscale(1) brightness(0)" width="40" height="40" alt='{{ .Get "producttitle" }}'></a>
+    <h4><a href='{{ .Get "readmorelink"}}' class="text-dark">{{ .Get "producttitle" }}<small>{{ .Get "productfamily" }}</small></a></h4>
+    </div>
+    <p class="mb-4">{{ .Get "producttext" }}</p>
+    <div class="referencelink">
+        {{ if isset .Params "netlink" }}<a class="text-dark" href='{{ .Get "netlink"}}'><small><i class="las la-arrow-right mr-1"></i>{{ .Get "producttitle" }} {{ .Get "nettext" }}</small></a>{{ end }}
+        {{ if isset .Params "javalink" }}<a class="text-dark" href='{{ .Get "javalink"}}'><small><i class="las la-arrow-right mr-1"></i>{{ .Get "producttitle" }} {{ .Get "javatext" }}</small></a>{{ end }}
+        {{ if isset .Params "morelink" }}<a class="text-dark" href='{{ .Get "morelink"}}'><small><i class="las la-arrow-right mr-1"></i>{{ .Get "producttitle" }} {{ .Get "moretext" }}</small></a>{{ end }}
+        {{ if isset .Params "lowcodelink" }}<a class="text-dark" href='{{ .Get "lowcodelink"}}'><small><i class="las la-arrow-right mr-1"></i>{{ .Get "producttitle" }} {{ .Get "lowcodetext" }}</small></a>{{ end }}
+        {{ if isset .Params "nocodelink" }}<a class="text-dark" href='{{ .Get "nocodelink"}}'><small><i class="las la-arrow-right mr-1"></i>{{ .Get "producttitle" }} {{ .Get "nocodetext" }}</small></a>{{ end }}
+    </div>
+</div>

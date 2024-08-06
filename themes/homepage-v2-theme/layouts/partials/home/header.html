@@ -1,0 +1,25 @@
+<div class="webcontent">
+    <div class="hero">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 heroimg">
+                    <div class="imgstack">
+                        <img src='/img/headergraphics.svg'
+                            alt='{{ index (.Page.Scratch.Get "trDownloadsPage") "hero-alttext" }}' width='400'
+                            height='400' class='mainimg' loading='lazy'>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <h1>{{ index (.Page.Scratch.Get "trDownloadsPage") "hero-heading" }}</h1>
+                    <!--<h1>File Format SDKs</h1>-->
+                    <h2>{{ index (.Page.Scratch.Get "trDownloadsPage") "hero-text" }}</h2>
+                    <p><a href='https://products.groupdocs.com/'>{{ index (.Page.Scratch.Get "trDownloadsPage")
+                            "hero-button" }}</a></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

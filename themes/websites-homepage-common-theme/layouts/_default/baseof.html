@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" dir="ltr">
+
+     {{if in .Permalink "/404.html"}}
+      {{ partial "head.html" . }}
+    {{ else }}
+      {{ partial "head.html" . }}
+    {{ end }}
+  
+
+    {{ $CurrentSection :=.Site.Params.contentsection }}
+    {{ $faviconfolder :=.Site.Params.faviconfolder }}
+    {{$currentcontentpath := print $faviconfolder "/" $CurrentSection}}
+
+  
+    
+    
+        {{ if eq $currentcontentpath "conholdate/cloud"  }}
+            <body class="bootstrap-wrapper {{ $faviconfolder }}">
+        {{else}}       
+            <body class="{{ $faviconfolder }}">
+        {{end}}
+        {{ if not (or (in .Site.BaseURL "qa") (in .Site.BaseURL "localhost")) }}
+            {{ $googletagmanager :=.Site.Params.googletagmanager }}
+            {{ if $googletagmanager }}
+            <!-- Google Tag Manager (noscript) -->
+                <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $googletagmanager }}"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+            {{ end }}
+        {{ end }}
+
+        {{ if eq $currentcontentpath "conholdate/app"  }}
+            <div class="content">
+                <div class="app-fileformat-main">
+                    {{- block "main" . }}{{- end }}
+                </div>
+            </div>
+        {{else}}
+                    <div class="body-content home">
+                        {{- block "main" . }}{{- end }}
+                    </div>
+        {{end}}
+        {{- partial "footer.html" . -}}
+    </body>
+
+  
+
+
+    
+</html>

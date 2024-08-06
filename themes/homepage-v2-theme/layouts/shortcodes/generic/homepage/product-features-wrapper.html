@@ -1,0 +1,11 @@
+<div class='containe-fluid features-list {{ .Get "ClassName"}}' id="features">
+    <div class="container">
+        <div class="row d-start">
+            {{ if isset .Params "ft-heading" }}<div class="col-lg-12"><h3>{{ .Get "ft-heading" }}</h3></div>{{ end }}
+            <div class='{{ .Get "ftclaslider"}} col-lg-12'>
+                {{ .Inner }}
+              </div>
+              <div class="col-lg-12">
+                <a href='{{ .Get "productfamilylink"}}' class="btn btn-cta-red">{{ .Get "productfamilytext"}}</a>
+            </div>            
+            </div></div></div>

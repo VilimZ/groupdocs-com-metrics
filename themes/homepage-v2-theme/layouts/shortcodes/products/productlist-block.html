@@ -1,0 +1,19 @@
+<div class='col-lg-6 rowblock innerblocks {{ .Get "ClassName"}}'>
+    <div class="d-flex"><h4>{{ .Get "producttitle" }}</h4>
+    </div>
+    <p class="mb-4">{{ .Get "producttext" }}</p>
+    <div class="referencelink productsref">
+        {{ if isset .Params "prolink1" }}<a class="text-dark" href='{{ .Get "prolink1" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext1" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink2" }}<a class="text-dark" href='{{ .Get "prolink2" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext2" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink3" }}<a class="text-dark" href='{{ .Get "prolink3" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext3" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink4" }}<a class="text-dark" href='{{ .Get "prolink4" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext4" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink5" }}<a class="text-dark" href='{{ .Get "prolink5" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext5" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink6" }}<a class="text-dark" href='{{ .Get "prolink6" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext6" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink7" }}<a class="text-dark" href='{{ .Get "prolink7" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext7" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink8" }}<a class="text-dark" href='{{ .Get "prolink8" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext8" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink9" }}<a class="text-dark" href='{{ .Get "prolink9" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext9" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink10" }}<a class="text-dark" href='{{ .Get "prolink10" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext10" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink11" }}<a class="text-dark" href='{{ .Get "prolink11" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext11" }}</small></a>{{ end }}
+        {{ if isset .Params "prolink12" }}<a class="text-dark" href='{{ .Get "prolink12" }}'><small><i class="las la-arrow-right mr-1"></i> {{ .Get "protext12" }}</small></a>{{ end }}
+    </div>
+</div>

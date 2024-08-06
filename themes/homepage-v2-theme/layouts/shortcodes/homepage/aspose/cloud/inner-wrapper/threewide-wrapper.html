@@ -1,0 +1,31 @@
+<div class="container-fluid threewide">
+    <div class="container">
+      <div class="row d-start">
+        {{ if isset .Params "sitelink" }}<div class="col-md-4 bg-yl-lite threecombo">
+          <div class="threeboximg"><a href='{{ .Get "sitelink"}}' target="_blank"><img
+                src='{{ .Get "siteimg"}}' width="64"alt="logo"></a></div>
+          <div class="threeboxtext">
+            <h3>{{ .Get "sitetitle" }}</h3>
+            <p><a href='{{ .Get "cusotmerlink"}}' target="_blank">Customers</a> {{ if isset .Params "successlink2" }}| <a href='{{ .Get "successlink"}}' target="_blank">Success Stories</a>{{end}}</p>
+            <img src="/images/cardarrow.svg" width="20" alt="More">
+          </div>
+        </div>{{ end }}
+        {{ if isset .Params "sitelink2" }}<div class="col-md-4 bg-gr-lite threecombo">
+            <div class="threeboximg"><a href='{{ .Get "sitelink2"}}' target="_blank"><img
+                src='{{ .Get "siteimg2"}}' width="64"alt="logo"></a></div>
+          <div class="threeboxtext">
+            <h3>{{ .Get "sitetitle2" }}</h3>
+            <p><a href='{{ .Get "cusotmerlink2"}}' target="_blank">Customers</a> | <a href='{{ .Get "successlink2"}}' target="_blank">Success Stories</a></p>
+            <img src="/images/cardarrow.svg" width="20" alt="More">
+          </div>
+        </div>{{ end}}
+        {{ if isset .Params "submitstorylink" }}<div class="col-md-4 bg-bl-lite threecombo">
+          <div class="threeboxtext hovlink">
+            <h3><a href='{{ .Get "submitstorylink" }}' class="text-white">{{ .Get "submittext" }}</a></h3>
+            <p><a href='{{ .Get "submitstorylink" }}' class="text-white">{{ .Get "submitdesc" }}</a></p>
+            <img src="/images/cardarrow.svg" width="20" alt="More">
+          </div>
+        </div>{{ end }}
+      </div>
+    </div>
+  </div>

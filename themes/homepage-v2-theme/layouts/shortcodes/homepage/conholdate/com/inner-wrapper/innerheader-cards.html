@@ -1,0 +1,19 @@
+    <div class="container-fluid mt-80">
+        <div class="container">
+            <div class="row">
+        <a class="col-md-4 headercard" href='{{ .Get "card1link" }}'>
+        <h3>Conholdate.Total</h3>
+        {{ if isset .Params "productype1" }}<span>{{ .Get "productype1"}}</span>{{ end }}
+        <img src="/images/cardarrow.svg" width="20" alt="More">
+        </a>
+        <a class="col-md-4 headercard" href='{{ .Get "card2link" }}'>
+        <h3>Conholdate.Total</h3>
+        {{ if isset .Params "productype2" }}<span>{{ .Get "productype2"}}</span>{{ end }}
+         <img src="/images/cardarrow.svg" width="20" alt="More">
+        </a>
+        <a class="col-md-4 headercard" href='{{ .Get "card3link" }}'>
+        <h3>Conholdate.Total</h3>
+        {{ if isset .Params "productype3" }}<span>{{ .Get "productype3"}}</span>{{ end }}
+         <img src="/images/cardarrow.svg" width="20" alt="More">
+        </a>
+        </div></div></div>

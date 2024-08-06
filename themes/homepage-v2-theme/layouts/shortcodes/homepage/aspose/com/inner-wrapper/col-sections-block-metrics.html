@@ -1,0 +1,9 @@
+<div class="col-lg-4">
+<!--<i class='las la-{{ .Get "section-ico"}}'></i>-->
+<p style="color:#606469;font-size:14px;min-height:10px;">{{ .Get "btitle"}}</p>
+<h4>{{ .Get "section-heading" }}</h4>
+<p>{{ .Get "section-paragraph"}}</p>
+<!--{{ if isset .Params "sectionblock-link" }}<a href='{{ .Get "sectionblock-link"}}' class="btn-link">
+{{ .Get "section-block-text"}}</a>{{ end }}-->
+{{ if isset .Params "seclinktext" }}<div class="btn-box" style="display: block;padding-bottom:60px;"><a href='{{ .Get "seclink"}} '><span style="color:#0052b3;">{{ .Get "seclinktext"}}</span></a></div>{{end}}
+</div>  
