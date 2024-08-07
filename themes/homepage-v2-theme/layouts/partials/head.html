@@ -8,7 +8,7 @@
     {{$currentcontentpath := print $faviconfolder "/" $CurrentSection}}
 
 
-    {{ if (or (in .Site.BaseURL "qa-metrics") (in .Site.BaseURL "localhost") )  }}
+    {{ if (or (in .Site.BaseURL "qa-metrics") (in .Site.BaseURL "localhost") (in .Site.BaseURL "vilimz.github.io/groupdocs-com-metrics") )  }}
     <meta name="robots" content="noindex, nofollow"/>
     {{ else }}
     <meta name="robots" content="index, follow"/>
