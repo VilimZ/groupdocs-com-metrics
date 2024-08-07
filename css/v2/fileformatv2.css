@@ -1,0 +1,48 @@
+.productplatform h4 {line-height: 26px;}
+.productplatform h4 a {color: var(--dark);font-size: 20px; font-weight: 500;}
+.productplatform p {font-size: 14px;line-height: 24px;}
+.productplatform h4 a:hover {color: var(--blue);}
+.bg-java{
+    background-color: rgb(222, 68, 68);
+    border-radius:50%;
+  }
+  .bg-net{
+    background-color: rgb(103, 33, 122);
+    border-radius:50%;
+  }
+  .bg-php{
+    background-color: rgb(71, 102, 204);
+    border-radius:50%;
+  }
+  .bg-cpp{
+    background-color: rgb(0, 68, 130);
+    border-radius:50%;
+  }
+  .bg-js{
+    background-color: rgb(245, 222, 25);
+    border-radius:50%;
+  }
+  .bg-python{
+    background-color: rgb(100, 100, 100);
+    border-radius:50%;
+  }
+  .bg-go{
+    background-color: rgb(205, 47, 98);
+    border-radius:50%;
+  }
+  .bg-ruby{
+    background-color: rgb(130,12,2);
+    border-radius:50%;
+  }
+  .bg-swift{
+    background-color: rgb(253,102,49);
+    border-radius:50%;
+  }
+  .bg-c{
+    background-color: rgb(40, 53, 149);
+    border-radius:50%;
+  }
+  .bg-javascript {
+    background-color: #f5de19;
+    border-radius: 50%
+}

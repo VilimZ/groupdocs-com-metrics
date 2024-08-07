@@ -1,0 +1,193 @@
+
+.featuredresources h3, .features-list h3, .hotnews h3, .populartools h3, .resources h3, .why-choose h3 {
+    font-size: 44px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--dark);
+}
+.border-block h5, .col-section h4, .features-list h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 30px;
+}
+.col-section p, .features-list p {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+.features-slider {
+    padding: 4rem 15px 1rem;
+}
+.btn .btn-cta-red{
+    background-color: var(--green);
+}
+.slidebox .col-lg-4{
+    margin-bottom: 25px;
+}
+.btn {
+    padding: 10px 35px;
+    line-height: 30px!important;
+    font-size: 18px!important;
+    border-radius: 0;
+}
+.btn-cta-red {
+    background-color: var(--light-purple);
+    color: #040222;
+}
+.features-list{
+    padding: 3rem 0 6rem;
+}
+.companies-list {
+    background-color: #5d21d1;
+    background: linear-gradient(180deg,#5d21d1 0,#733ae5 100%);
+    padding: 4rem 0 0rem;
+    margin-bottom: 6rem;
+}
+.companies-list h3 {
+    font-size: 44px;
+    font-weight: 600;
+    text-align: left;
+    color: var(--white);
+    margin: 0 0 30px;
+}
+.companies-list p {
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 40px;
+    line-height: 36px;
+}
+.resources {
+    padding: 6rem 0;
+    background-color: #f5f9ff;
+}
+.resources h4 a{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 40px;
+    line-height: 36px;
+}
+.resources ul{
+    margin-top:20px;
+    padding:0;
+    list-style-type: none;
+}
+.resources ul li a {
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px dotted #b5b5b5;
+    padding-bottom: 10px;
+    display: block;
+}
+.card-title a:hover, .metricsbox a:hover, .relatedproducts a:hover, .resources h4 a:hover, .resources ul li a:hover {
+    color: var(--blue);
+}
+body .readytostart {
+    padding-top: 6rem!important;
+    padding-bottom: 6rem!important;
+    text-align: center;
+}
+.readytostart h3 {
+    font-size: 42px;
+}
+.readytostart .btn-cta-yellow {
+    color: var(--dark);
+    background-color: var(--light-blue);
+    font-size: 24px;
+}
+.btn:hover
+{background-color: var(--green);}
+
+.apptools {
+    background-color: #fff;
+    border: 1px solid var(--lite);
+    transition: .2s ease-in-out;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.populartools h2 {
+    font-size: 24px!important;
+    color: var(--dark);
+}
+.apptools h4 {
+    font-size: 18px;
+    color: var(--dark);
+}
+.apptools h4 a{
+    color: var(--dark)!important;
+}
+.apptools p {
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 0;
+}
+.apptools, .offerbox {
+    position: relative;
+    margin-top: 2rem;
+}
+.populartools {
+    background-color: #f7f8fc;
+}
+.sy-6, body .sb-6 {
+    padding-top:6rem!important;
+    padding-bottom: 6rem!important;
+}
+
+.btn-cta-red {
+    background-color: var(--light-purple);
+    color: #040222;
+}
+.apptools:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
+}
+.apptools:hover p, .apptools:hover h4 a{
+    color: var(--white)!important;
+}
+.resources ul li a {
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 400;
+    border-bottom: 1px dotted #b5b5b5;
+    padding-bottom: 10px;
+    display: block;
+}
+.resources ul li, .why-choose ul li {
+    margin-bottom: 10px;
+}
+.resources ul li:last-child a {
+    border: 0!important;
+}
+.btn-link-header:hover, .sc-box.num3 a {
+    color: var(--yellow);
+}
+.btn-link-header:hover{
+    background:transparent!important;
+}
+.innerheader{
+    background:url(/templates/fileformat/img/header_ff.jpg) 0 0 no-repeat!important;
+    background-size: cover!important;
+
+}
+
+#allapps .imgblock i{
+display: table;
+font-size: 40px;
+margin-bottom: 1rem;
+-webkit-text-fill-color: transparent;
+background: #7c3ff2;
+background: linear-gradient(180deg,#7c3ff2 36%,#431995);
+-webkit-background-clip: text;
+transition: all .2s ease-in-out;
+}
+#allapps .col-md-3{
+    margin-bottom: 3rem;
+}
+.features-slider h4 a{color:var(--black); font-size: 19px;}
+.features-slider h4 a:hover{color:var(--blue);}
+.features-slider p{font-size: 16px!important;}
