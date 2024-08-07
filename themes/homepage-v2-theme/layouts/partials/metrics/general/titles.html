@@ -9,9 +9,11 @@
 {{ $totalDownloadsJsonData := .Scratch.Get "totalDownloadsJsonData" }}
 {{ $productsDownloadsJsonData := .Scratch.Get "productsDownloadsJsonData" }}
 {{ $translationFamilyDescriptionsJsonData := .Scratch.Get "translationFamilyDescriptionsJsonData" }}
-{{ $translationAppsSectionJsonData := .Scratch.Get "translationAppsSectionJsonData" }}
+{{/*  {{ $translationAppsSectionJsonData := .Scratch.Get "translationAppsSectionJsonData" }}  */}}
+{{ $translationAppsSectionJsonData := getJSON "data/metrics/tranApp.json" }}
 
-{{ $currLang := .Scratch.Get "currLang"}}
+
+ {{ $currLang := .Scratch.Get "currLang"}}  
 
 
 {{ $trFamilyDesc := "" }}
