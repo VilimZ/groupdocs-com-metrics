@@ -378,7 +378,7 @@
           transform: 'translate(-50%, -50%)'
         });
         applyStyles(modal.querySelector('.consent-banner-modal-wrapper'), {
-          display: 'block'
+          visibility: 'hiden'
         });
         showModal(main);
         dispatchBodyEvent('shown');
