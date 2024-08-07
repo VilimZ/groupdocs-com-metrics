@@ -37,7 +37,7 @@
     <meta name="keywords" content="{{ range $i, $e := . }}{{ if $i }} {{ end }}{{ $e }}{{ end }}">{{ end }}
     <!--<meta name="description" content="{{ .Page.Params.description }}" />-->
 
-    {{$filepath := print "/images/" $faviconfolder "/favicon"}}
+    {{$filepath := print "./images/" $faviconfolder "/favicon"}}
     {{$staticfilepath := print "static/images/" $faviconfolder "/favicon"}}
 
     {{$applefavicon := print $filepath "/" "apple-touch-icon.png"}}
