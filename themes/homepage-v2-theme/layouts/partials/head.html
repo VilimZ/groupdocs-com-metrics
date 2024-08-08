@@ -87,30 +87,16 @@
     <meta name="author" content="{{ $contentauthor }}" />
     {{ end }}
 
-    {{ $googlesiteverification :=.Site.Params.googlesiteverification }}
-    {{ if $googlesiteverification }}
-    <meta name="google-site-verification" content="{{ $googlesiteverification }}" />
-    {{ end }}
+  
 
     {{ $yandexverification :=.Site.Params.yandexverification }}
     {{ if $yandexverification }}
     <meta name="yandex-verification" content="{{ $yandexverification }}" />
     {{ end }}
 
-    {{ $baidusiteverification :=.Site.Params.baidusiteverification }}
-    {{ if $baidusiteverification }}
-    <meta name="baidu-site-verification" content="{{ $baidusiteverification }}" />
-    {{ end }}
+  
 
-    {{ $GoogleadsenseAccount :=.Site.Params.GoogleadsenseAccount }}
-    {{ if $GoogleadsenseAccount }}
-    <meta name="google-adsense-account" content="{{ $GoogleadsenseAccount }}">
-    {{ end }}
-    {{ $adsbygoogle :=.Site.Params.adsbygoogle }}
-    {{ if $adsbygoogle }}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{$adsbygoogle}}"
-        crossorigin="anonymous"></script>
-    {{ end }}
+
 
 
     {{ $metafbtwitter :=.Site.Params.metafbtwitter }}
@@ -343,52 +329,12 @@
    
 	
 	<!--this script is for consent mode pop up #ConsentMode -->
-    <script>
-        // Define dataLayer and the gtag function.
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-    
-        // Set default consent to 'denied' as a placeholder
-        // Determine actual values based on your own requirements
-        gtag('consent', 'default', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        });
-        </script>
+
 	
 	
     <!-- Google Tag Manager -->
 
     
-    {{ if .Page.IsTranslated }}
-    {{- partial "langswitcher.html" . -}}
-    {{ end }}
-
-    <!-- aspose.dev -->
-    {{ if and (eq $faviconfolder "asposedev") (eq $CurrentSection "com" ) }}
-    <link href="/templates/asposedev/css/style.css" rel="stylesheet">
-    {{ end }}
-
-    {{ if not (or (in .Site.BaseURL "qa") (in .Site.BaseURL "localhost")) }}
-
-    {{ $googleAnalytics :=.Site.Params.GoogleAnalytics }}
-    {{ if $googleAnalytics }}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ $googleAnalytics }}"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date()); gtag('config', {{ $googleAnalytics }});</script>
-    {{ end }}
-
-   
-    
-    {{ $ga4analytics :=.Site.Params.ga4analytics }}
-    {{ if $ga4analytics }}
-
-    {{ end }}
-    {{ end }}
-    {{ if .Page.IsTranslated }}
-    {{- partial "langswitcher.html" . -}}
-    {{ end }}
+ 
 
 </head>
